@@ -1,0 +1,43 @@
+@use 'variables' as *;
+@use 'reset';
+@use 'intro';
+@use 'nav';
+@use 'about';
+@use 'career';
+@use 'project';
+@use 'contact';
+
+* { box-sizing: border-box; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.section-wrap {
+  height: auto;
+  margin: 0 auto;
+  max-width: 71.25rem;
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+.point { color: $accent; }
+
+.flex-set {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.font24 { font-size: 24px; }
+
+@media screen and (max-width: 768px) {
+  .section-wrap { padding: 3rem 1rem; }
+
+  .font24 {
+    font-size: 20px;
+
+    h4 { font-size: 15px; }
+  }
+}

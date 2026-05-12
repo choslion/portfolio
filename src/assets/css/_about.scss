@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .section-title {
   display: flex;
   align-items: center;
@@ -13,8 +15,8 @@
 .underLine {
   width: 70px;
   height: 4px;
-  background-color: #04c2c9;
-  margin: 25px 0 100px 0;
+  background-color: $accent;
+  margin: 25px 0 100px;
   display: flex;
   justify-content: center;
 }
@@ -25,19 +27,16 @@
   font-weight: 700;
   line-height: 40pt;
 }
-.appeal-point {
-  margin-top: 50px;
-}
+
+.appeal-point { margin-top: 50px; }
 
 .appeal-second {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
 
-.appeal-second .logo {
-  margin-top: 30px;
+  .logo { margin-top: 30px; }
 }
 
 .about-detail {
@@ -48,33 +47,27 @@
 
 .about-me {
   width: 50%;
-  padding: 0 40px 0 40px;
+  padding: 0 40px;
   flex-direction: column;
   text-align: center;
   box-sizing: border-box;
-}
 
-.about-me img {
-  width: 300px;
+  img { width: 300px; }
 }
 
 .about-me__text {
   flex-direction: column;
+
+  p {
+    line-height: 20pt;
+    padding: 20px 0;
+    box-sizing: border-box;
+  }
+
+  span { line-height: 20pt; }
 }
 
-.about-me__text p {
-  line-height: 20pt;
-  padding: 20px 0;
-  box-sizing: border-box;
-}
-
-.about-me__text span {
-  line-height: 20pt;
-}
-
-.about-skills {
-  width: 50%;
-}
+.about-skills { width: 50%; }
 
 .who {
   box-sizing: border-box;
@@ -90,7 +83,7 @@
   justify-content: right;
   align-items: center;
   height: 28px;
-  margin: 0 0 15px 0;
+  margin: 0 0 15px;
   border-radius: 12px;
 }
 
@@ -101,7 +94,7 @@
   width: 0%;
   transition: width 1.3s;
   height: 100%;
-  background-color: #00a1a7;
+  background-color: darken($accent, 5%);
   border-radius: 12px;
 }
 
@@ -112,7 +105,7 @@
   width: 100px;
   height: 100%;
   color: #fff;
-  background-color: #04c2c9;
+  background-color: $accent;
   border-radius: 12px;
 }
 
@@ -124,84 +117,30 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .underLine {
-    width: 70px;
-    margin: 25px 0 50px 0;
-  }
+  .underLine { margin: 25px 0 50px; }
 
   .appeal-text {
     font-size: 24px;
     line-height: 30pt;
   }
-  .appeal-point {
-    margin-top: 30px;
-  }
 
-  .appeal-second {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+  .appeal-point { margin-top: 30px; }
 
-  .appeal-second .logo {
-    margin-top: 30px;
-  }
-
-  .about-detail {
-    flex-direction: column;
-  }
+  .about-detail { flex-direction: column; }
 
   .about-me {
-    padding: 0 50px 50px 50px;
+    padding: 0 50px 50px;
     width: 100%;
-    box-sizing: border-box;
-  }
-
-  .about-me img {
-    width: 300px;
-  }
-
-  .about-me__text {
-    flex-direction: column;
-  }
-
-  .about-me__text p {
-    line-height: 20pt;
-    padding: 20px 0;
-    box-sizing: border-box;
-  }
-
-  .about-me__text span {
-    line-height: 20pt;
   }
 
   .about-skills {
     width: 100%;
     padding-left: 50px;
   }
-
-  .who {
-    box-sizing: border-box;
-    padding-top: 20px;
-    font-weight: 700;
-  }
-
-  .skill {
-    background-color: #eee;
-    max-width: 90%;
-    position: relative;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    height: 28px;
-    margin: 0 0 15px 0;
-  }
 }
+
 @media screen and (max-width: 768px) {
-  .underLine {
-    margin: 20px 0 30px 0;
-  }
+  .underLine { margin: 20px 0 30px; }
 
   .appeal-text {
     font-size: 18px;
@@ -209,15 +148,13 @@
   }
 
   .about-me {
-    padding: 0 0 30px 0;
+    padding: 0 0 30px;
     width: 100%;
-    box-sizing: border-box;
   }
 
-  .percent {
-    padding: 0;
-  }
+  .percent { padding: 0; }
 }
+
 @media screen and (max-width: 600px) {
   .title {
     font-size: 24px;
@@ -229,16 +166,11 @@
     line-height: 20pt;
   }
 
-  .about-me img {
-    width: 250px;
-  }
+  .about-me img { width: 250px; }
 
-  .about-me__text p {
-    font-size: 14px;
-  }
-
-  .about-me__text span {
-    font-size: 12px;
+  .about-me__text {
+    p { font-size: 14px; }
+    span { font-size: 12px; }
   }
 
   .about-skills {
@@ -249,7 +181,7 @@
   .skill {
     font-size: 11px;
     height: 22px;
-    margin: 0 0 15px 0;
+    margin: 0 0 15px;
   }
 
   .skill-name {

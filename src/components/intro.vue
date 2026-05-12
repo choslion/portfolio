@@ -6,9 +6,7 @@
           <a href=""><img src="@/assets/img/logo-white.png" alt="로고" /></a>
         </h1>
         <h1 class="intro-text">
-          안녕하세요, 저는 <span class="point">조승혁</span> 입니다.
-          <br />
-          웹 개발자가 되고 싶습니다.
+          안녕하세요, 저는 <span class="point">웹 퍼블리셔</span> 조승혁입니다.
         </h1>
         <div class="button" @click="moreView">
           View my work

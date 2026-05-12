@@ -4,14 +4,11 @@
       <div class="project-title">{{ title }}</div>
       <div class="project-date">{{ date }}</div>
       <div class="project-info">
-        <div class="project-info__imgs">
+        <div v-if="img" class="project-info__imgs">
           <img :src="img" alt="프로젝트 메인" />
         </div>
-        <div class="project-info__contents">
-          <div>
-            {{ introduce }}
-            <p>{{ feeling }}</p>
-          </div>
+        <div class="project-info__contents" :class="{ 'project-info__contents--full': !img }">
+          <div>{{ introduce }}</div>
           <hr />
           <ul class="project-contents__ul">
             <li class="project-contents__li">
@@ -28,26 +25,19 @@
               </div>
               <div>{{ mainFunc }}</div>
             </li>
-            <li class="project-contents__li">
+            <li v-if="url" class="project-contents__li">
               <div>
                 <span><font-awesome-icon icon="fa-solid fa-check" /></span>
                 <div class="project__main-func">URL</div>
               </div>
               <div><a :href="url" target="_blank">{{ url }}</a></div>
             </li>
-            <li class="project-contents__li">
+            <li v-if="github" class="project-contents__li">
               <div>
                 <span><font-awesome-icon icon="fa-solid fa-check" /></span>
                 <div class="project__main-func">Github</div>
               </div>
               <div><a :href="github" target="_blank">{{ github }}</a></div>
-            </li>
-            <li class="project-contents__li">
-              <div>
-                <span><font-awesome-icon icon="fa-solid fa-check" /></span>
-                <div class="project__main-func">목업</div>
-              </div>
-              <div><a :href="figma" target="_blank">{{ figma }}</a></div>
             </li>
             <li class="project-contents__li">
               <div>
@@ -69,12 +59,10 @@ defineProps({
   date: String,
   img: String,
   introduce: String,
-  feeling: String,
   contribution: String,
   mainFunc: String,
   url: String,
   github: String,
-  figma: String,
   useSkills: String,
 })
 </script>

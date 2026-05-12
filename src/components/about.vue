@@ -24,7 +24,7 @@
                 <br />
                 스케이트보드 타는것을 즐기며 또한 삶 자체를 즐긴다.
                 <br />
-                MBTI 는 ESTP(에너지 넘치는 문제해결사)이며 꿈은 웹 개발자이다.
+                MBTI 는 ESTP(에너지 넘치는 문제해결사)이며 현재 웹 퍼블리셔로 재직 중이다.
               </p>
               <span># 이스라엘 해외봉사 활동 # GS25 점포관리</span>
               <span># 그린컴퓨터학원 뷰(Vue)활용 프론트엔드 웹개발자 양성과정 수료</span>
@@ -44,14 +44,14 @@ import { onMounted } from 'vue'
 import skill from './skill.vue'
 
 const skills = [
-  { name: 'HTML', percent: 90 },
-  { name: 'CSS', percent: 90 },
-  { name: 'JavaScript', percent: 90 },
+  { name: 'HTML', percent: 95 },
+  { name: 'CSS/SCSS', percent: 95 },
+  { name: 'JavaScript', percent: 80 },
+  { name: 'Vue.js', percent: 70 },
+  { name: '웹 접근성', percent: 75 },
+  { name: 'Git/GitHub', percent: 70 },
+  { name: 'Figma', percent: 60 },
   { name: 'Node.js', percent: 40 },
-  { name: 'MySQL', percent: 40 },
-  { name: 'Pug', percent: 30 },
-  { name: 'MongoDB', percent: 30 },
-  { name: 'Vue.js', percent: 30 },
 ]
 
 onMounted(() => {

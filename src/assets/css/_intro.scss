@@ -1,9 +1,11 @@
+@use 'variables' as *;
+
 .section-intro {
-  height: calc(100vh - 0px);
+  height: 100vh;
   position: relative;
   text-align: center;
   color: #fff;
-  background: linear-gradient(135deg, #0d1117 0%, #1b242f 60%, #0a1a20 100%);
+  background: linear-gradient(135deg, $dark-1, $dark-2 60%, #0a1a20);
 }
 
 .flex {
@@ -16,11 +18,11 @@
 
 .logo {
   margin: 200px 0 60px;
-}
 
-.logo img {
-  width: 200px;
-  height: 100px;
+  img {
+    width: 200px;
+    height: 100px;
+  }
 }
 
 .intro-text {
@@ -34,11 +36,11 @@
   padding: 15px 30px;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
-}
 
-.button:hover {
-  background-color: #04c2c9;
-  border-color: #04c2c9;
+  &:hover {
+    background-color: $accent;
+    border-color: $accent;
+  }
 }
 
 .quotes {
@@ -47,10 +49,7 @@
   line-height: 25pt;
 }
 
-.quote {
-  font-size: 24px;
-}
-
+.quote { font-size: 24px; }
 .author {
   font-size: 20px;
   opacity: 0.8;
@@ -72,17 +71,6 @@
     padding: 15px 20px;
   }
 
-  .quotes {
-    /* margin-top: 300px;
-    z-index: 1;
-    line-height: 25pt; */
-  }
-
-  .quote {
-    font-size: 13px;
-  }
-
-  .author {
-    font-size: 14px;
-  }
+  .quote { font-size: 13px; }
+  .author { font-size: 14px; }
 }

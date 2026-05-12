@@ -3,8 +3,8 @@
     <intro id="intro" />
     <navMenu />
     <about id="about" />
+    <career id="career" />
     <project id="project" />
-    <cloning id="cloning" />
     <contact id="contact" />
   </div>
 </template>
@@ -13,10 +13,10 @@
 import intro from './components/intro.vue'
 import navMenu from './components/nav.vue'
 import about from './components/about.vue'
+import career from './components/career.vue'
 import project from './components/project.vue'
-import cloning from './components/cloning.vue'
 import contact from './components/contact.vue'
-import '@/assets/css/index.css'
+import '@/assets/css/index.scss'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 

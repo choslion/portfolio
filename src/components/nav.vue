@@ -1,51 +1,79 @@
 <template>
-  <div class="nav-wrap">
-    <nav>
-      <div id="mySidenav" class="sideNav" v-show="open">
-        <a href="#" @click.prevent="goSection('about')" class="toSection">About</a>
-        <a href="#" @click.prevent="goSection('project')" class="toSection">Project</a>
-        <a href="#" @click.prevent="goSection('cloning')" class="toSection">Practice</a>
-        <a href="#" @click.prevent="goSection('contact')" class="toSection">Contact</a>
-      </div>
-      <ul class="nav-menu">
-        <li @click="goSection('about')" class="toSection">About</li>
-        <li @click="goSection('project')" class="toSection">Project</li>
-        <li @click="goSection('cloning')" class="toSection">Practice</li>
-        <li @click="goSection('contact')" class="toSection">Contact</li>
-      </ul>
-      <div class="mo-nav">
-        <font-awesome-icon @click="open = !open" icon="fa-solid fa-bars" size="2x" />
-      </div>
-      <div class="time">
-        <span>{{ getFullTime }}</span>
-      </div>
+  <!-- Desktop: pill nav centered at top -->
+  <div class="nav-desktop">
+    <nav class="nav-pill">
+      <button
+        v-for="item in items"
+        :key="item.id"
+        @click="goSection(item.id)"
+        :class="['nav-item', { 'nav-item--active': active === item.id }]"
+      >
+        {{ item.label }}
+      </button>
     </nav>
+  </div>
+
+  <!-- Mobile: floating button + slide-up overlay -->
+  <div class="nav-mobile">
+    <Transition name="overlay">
+      <div class="nav-overlay" v-if="open" @click="open = false">
+        <div class="nav-overlay__card" @click.stop>
+          <button
+            v-for="item in items"
+            :key="item.id"
+            @click="goSection(item.id)"
+            :class="['nav-overlay__item', { 'nav-overlay__item--active': active === item.id }]"
+          >
+            {{ item.label }}
+          </button>
+        </div>
+      </div>
+    </Transition>
+    <button class="nav-trigger" @click="open = !open">
+      <font-awesome-icon :icon="open ? 'fa-regular fa-circle-xmark' : 'fa-solid fa-bars'" />
+    </button>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
+const items = [
+  { id: 'about', label: 'About' },
+  { id: 'career', label: 'Career' },
+  { id: 'project', label: 'Project' },
+  { id: 'contact', label: 'Contact' },
+]
+
+const active = ref('')
 const open = ref(false)
-const getFullTime = ref('')
 
-function getTime() {
-  const d = new Date()
-  getFullTime.value = [d.getHours(), d.getMinutes(), d.getSeconds()]
-    .map(n => String(n).padStart(2, '0'))
-    .join(':')
-}
-
-const timer = setInterval(getTime, 1000)
-
-function goSection(target) {
-  const el = document.getElementById(target)
+function goSection(id) {
+  const el = document.getElementById(id)
   if (el) el.scrollIntoView({ behavior: 'smooth' })
   open.value = false
 }
 
-onMounted(getTime)
-onUnmounted(() => clearInterval(timer))
+function updateActive() {
+  const scrollY = window.scrollY + 120
+  for (let i = items.length - 1; i >= 0; i--) {
+    const el = document.getElementById(items[i].id)
+    if (el && el.offsetTop <= scrollY) {
+      active.value = items[i].id
+      return
+    }
+  }
+  active.value = ''
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', updateActive)
+  updateActive()
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', updateActive)
+})
 </script>
 
 <style scoped></style>

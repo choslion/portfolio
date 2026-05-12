@@ -1,0 +1,107 @@
+@use 'variables' as *;
+
+.section-project {
+  background-color: $dark-3;
+
+  .title { color: #fff; }
+}
+
+.project-wrap {
+  background-color: #fff;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 2rem;
+  padding: 3rem;
+  position: relative;
+}
+
+.project-title {
+  font-size: 2.5rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.project-date {
+  margin-bottom: 2rem;
+  opacity: 0.6;
+  text-align: center;
+}
+
+.project-info {
+  display: flex;
+  justify-content: center;
+
+  &__imgs {
+    width: 50%;
+    margin-right: 3rem;
+
+    img {
+      border-radius: 10px;
+      width: 100%;
+    }
+  }
+
+  &__contents {
+    width: 45%;
+    line-height: 20pt;
+
+    p { margin-top: 1rem; }
+
+    &--full { width: 100%; }
+  }
+}
+
+.project-contents__ul {
+  margin-left: 2rem;
+  padding-left: 0;
+}
+
+.project-contents__li {
+  display: flex;
+  margin-bottom: 1rem;
+  position: relative;
+
+  span {
+    position: absolute;
+    left: -2rem;
+  }
+
+  a { word-break: break-all; }
+}
+
+.project__main-func {
+  font-weight: 900;
+  width: 5.5rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .project-info {
+    flex-direction: column;
+    align-items: center;
+
+    &__imgs {
+      width: 100%;
+      margin: 0 0 1.5rem;
+    }
+
+    &__contents {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .section-project .project-wrap {
+    padding: 1rem;
+  }
+
+  .project-title { font-size: 1rem; }
+  .project-date { font-size: 0.9rem; }
+
+  .project-info {
+    &__imgs { margin: 0 0 1rem; }
+    &__contents { font-size: 0.7rem; }
+  }
+}
