@@ -48,7 +48,7 @@ const projects = [
       '영수증, 설명서, 보증서 등 실물 문서를 디지털로 변환해 브라우저에 로컬 저장하는 프라이버시 중심 문서 보관 앱입니다. 클라우드 로그인 없이 IndexedDB에 데이터를 저장하며 PWA로 홈 화면 설치가 가능합니다.',
     contribution: '100%',
     mainFunc: '문서 촬영/업로드, 위치 기반 폴더 분류, 보증 기간 만료일 추적, ZIP 백업, OCR 문자 인식, PWA 설치',
-    url: '',
+    url: 'https://d34preqwbcth2m.cloudfront.net/',
     github: 'https://github.com/choslion/ssok-app',
     useSkills: 'Nuxt4, Vue.js, TypeScript, SCSS, IndexedDB, Tesseract.js, GSAP, AWS S3, CloudFront',
   },
