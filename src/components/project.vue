@@ -29,6 +29,18 @@ import projectModule from './projectModuel.vue'
 
 const projects = [
   {
+    title: 'Stock Pro',
+    date: '2025.07 (사이드 프로젝트)',
+    img: '',
+    introduce:
+      '주식 시장에 대한 이해를 높이고 React를 직접 학습하기 위해 제작한 금융 대시보드입니다. VIX(변동성 지수), 공포탐욕지수(FGI), S&P 500 현황을 시각화하고, 종합 점수로 시장 심리를 해석합니다.',
+    contribution: '프론트엔드 100% (백엔드 협업)',
+    mainFunc: 'VIX 차트, 공포탐욕지수, S&P 500 대시보드, 종합 심리 점수, 로딩·에러 상태 처리',
+    url: '',
+    github: 'https://github.com/choslion/stock-pro',
+    useSkills: 'React 19, Vite, Tailwind CSS, Recharts, Framer Motion, Zustand, Axios',
+  },
+  {
     title: 'SSOK (쏙)',
     date: '2026.03 ~ 2026.04 (개인 프로젝트)',
     img: '',
