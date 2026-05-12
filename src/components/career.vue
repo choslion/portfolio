@@ -93,10 +93,11 @@
             </div>
 
             <div class="career-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="240">
-              <h3 class="career-card__title">자동 배포 시스템 구축</h3>
-              <p class="career-card__desc">GitHub Actions + FTP를 연동해 사내 NAS에 자동 배포되는 파이프라인을 구축. main 푸시만으로 배포가 완료되는 흐름을 만들어 수동 FTP 업로드를 완전히 없앴습니다.</p>
+              <h3 class="career-card__title">CI/CD 파이프라인 설계 및 구축</h3>
+              <p class="career-card__desc">기존 수동 FTP 업로드 방식에서 벗어나 저장소 구조를 재설계. <strong>feature·hotfix → develop</strong> 머지 시 테스트 서버 자동 배포, <strong>develop → main PR</strong>은 관리자 승인 후 운영 서버 배포되는 이중 파이프라인을 GitHub Actions + FTP 연동으로 직접 구축했습니다.</p>
               <div class="career-tags">
                 <span class="tag">GitHub Actions</span>
+                <span class="tag">Git Flow</span>
                 <span class="tag">FTP</span>
                 <span class="tag">NAS</span>
                 <span class="tag">CI/CD</span>
