@@ -9,33 +9,18 @@
   </div>
 </template>
 
-<script>
-import intro from './components/intro.vue';
-import navMenu from './components/nav.vue';
-import about from './components/about.vue';
-import project from './components/project.vue';
-import cloning from './components/cloning.vue';
-import contact from './components/contact.vue';
-import '@/assets/css/index.css';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+<script setup>
+import intro from './components/intro.vue'
+import navMenu from './components/nav.vue'
+import about from './components/about.vue'
+import project from './components/project.vue'
+import cloning from './components/cloning.vue'
+import contact from './components/contact.vue'
+import '@/assets/css/index.css'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
-export default {
-  name: 'App',
-  components: {
-    intro,
-    navMenu,
-    about,
-    project,
-    cloning,
-    contact,
-  },
-  created() {
-    AOS.init({
-      once: true,
-    });
-  },
-};
+AOS.init({ once: true })
 </script>
 
 <style>

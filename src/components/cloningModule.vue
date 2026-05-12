@@ -3,12 +3,12 @@
     <a target="_blank" :href="url"><img :src="img" alt="작업" /></a>
   </div>
 </template>
-<script>
-export default {
-  props: {
-    url: String,
-    img: String,
-  },
-};
+
+<script setup>
+defineProps({
+  url: String,
+  img: String,
+})
 </script>
-<style scope></style>
+
+<style scoped></style>

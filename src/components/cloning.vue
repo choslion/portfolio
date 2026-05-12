@@ -6,86 +6,35 @@
         <div class="underLine"></div>
       </div>
       <div class="practice-img__wrap">
-        <cloningModule v-for="item in cloningModule" :key="item" :url="item.url" :img="item.img" />
+        <cloningModule v-for="item in cloningItems" :key="item.url + item.img" :url="item.url" :img="item.img" />
       </div>
     </div>
   </div>
 </template>
-<script>
-import cloningModule from './cloningModule.vue';
-export default {
-  components: {
-    cloningModule,
-  },
-  data() {
-    return {
-      arco: false,
-    };
-  },
 
-  setup() {
-    const cloningModule = [
-      {
-        url: 'https://choslion.github.io/jschallenge/random.html',
-        img: require(`@/assets/img/randomGame.png`),
-      },
-      {
-        url: 'https://choslion.github.io/seomoon/',
-        img: require(`@/assets/img/seomoon.png`),
-      },
-      {
-        url: 'https://choslion.github.io/housefresh/',
-        img: require(`@/assets/img/freshMain.png`),
-      },
-      {
-        url: 'https://choslion.github.io/dosirak/',
-        img: require(`@/assets/img/dosirak.png`),
-      },
-      {
-        url: 'https://choslion.github.io/richmond/',
-        img: require(`@/assets/img/richmond.png`),
-      },
-      {
-        url: 'https://choslion.github.io/jschallenge/log.html',
-        img: require(`@/assets/img/todo.png`),
-      },
-      {
-        url: 'https://choslion.github.io/kokoa-clone/',
-        img: require(`@/assets/img/kakao4.png`),
-      },
-      {
-        url: 'https://choslion.github.io/kokoa-clone/',
-        img: require(`@/assets/img/kakao1.png`),
-      },
-      {
-        url: 'https://choslion.github.io/kokoa-clone/',
-        img: require(`@/assets/img/kakao2.png`),
-      },
-    ];
-    return {
-      cloningModule,
-    };
-  },
-};
+<script setup>
+import cloningModule from './cloningModule.vue'
+import randomGame from '@/assets/img/randomGame.png'
+import seomoon from '@/assets/img/seomoon.png'
+import freshMain from '@/assets/img/freshMain.png'
+import dosirak from '@/assets/img/dosirak.png'
+import richmond from '@/assets/img/richmond.png'
+import todo from '@/assets/img/todo.png'
+import kakao4 from '@/assets/img/kakao4.png'
+import kakao1 from '@/assets/img/kakao1.png'
+import kakao2 from '@/assets/img/kakao2.png'
+
+const cloningItems = [
+  { url: 'https://choslion.github.io/jschallenge/random.html', img: randomGame },
+  { url: 'https://choslion.github.io/seomoon/', img: seomoon },
+  { url: 'https://choslion.github.io/housefresh/', img: freshMain },
+  { url: 'https://choslion.github.io/dosirak/', img: dosirak },
+  { url: 'https://choslion.github.io/richmond/', img: richmond },
+  { url: 'https://choslion.github.io/jschallenge/log.html', img: todo },
+  { url: 'https://choslion.github.io/kokoa-clone/', img: kakao4 },
+  { url: 'https://choslion.github.io/kokoa-clone/', img: kakao1 },
+  { url: 'https://choslion.github.io/kokoa-clone/', img: kakao2 },
+]
 </script>
-<style scoped>
-/* .fadeA-enter-from {
-  opacity: 0;
-}
-.fadeA-enter-active {
-  transition: opacity 0.6s ease-in-out;
-}
-.fadeA-enter-to {
-  opacity: 1;
-}
 
-.fadeA-leave-from {
-  opacity: 1;
-}
-.fadeA-leave-active {
-  transition: opacity 0.6s ease-in-out;
-}
-.fadeA-leave-to {
-  opacity: 0;
-} */
-</style>
+<style scoped></style>

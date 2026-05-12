@@ -3,10 +3,7 @@
   position: relative;
   text-align: center;
   color: #fff;
-  background-image: url(@/assets/img/port2.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: linear-gradient(135deg, #0d1117 0%, #1b242f 60%, #0a1a20 100%);
 }
 
 .flex {

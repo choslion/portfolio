@@ -13,11 +13,10 @@
         </div>
         <div class="appeal-second">
           <h2 class="appeal-text appeal-point" data-aos="zoom-out-up" data-aos-duration="1500">그래서 뽑아야 할 <span class="point">사람</span></h2>
-          <span class="logo"><img src="@/assets/img/logo-black.png" alt="검정조승혁" /></span>
+          <span class="logo"><img src="@/assets/img/logo-black.png" alt="로고" /></span>
         </div>
         <ul class="about-detail">
           <li class="about-me flex-set">
-            <img src="@/assets/img/port8-1.png" alt="웃는승혁" />
             <div class="about-me__text flex-set">
               <div class="who font24" data-aos="fade-right" data-aos-duration="1000">Who is this guy?</div>
               <p>
@@ -32,75 +31,40 @@
             </div>
           </li>
           <li class="about-skills">
-            <skill v-for="item in skill" :key="item" :name="item.name" :percent="item.percent" />
+            <skill v-for="item in skills" :key="item.name" :name="item.name" :percent="item.percent" />
           </li>
         </ul>
       </div>
     </section>
   </div>
 </template>
-<script>
-import skill from "./skill.vue";
-import { onMounted } from "@vue/runtime-core";
-export default {
-  components: {
-    skill,
-  },
-  setup() {
-    const skill = [
-      {
-        name: "HTML",
-        percent: 90,
-      },
-      {
-        name: "CSS",
-        percent: 90,
-      },
-      {
-        name: "JavaScript",
-        percent: 90,
-      },
-      {
-        name: "Node.js",
-        percent: 40,
-      },
-      {
-        name: "MySQL",
-        percent: 40,
-      },
-      {
-        name: "Pug",
-        percent: 30,
-      },
-      {
-        name: "MongoDB",
-        percent: 30,
-      },
-      {
-        name: "Vue.js",
-        percent: 30,
-      },
-    ];
-    onMounted(() => {
-      const handleScroll = () => {
-        const scrollY = window.scrollY;
-        const appealSecond = document.querySelector(".appeal-second");
-        if (scrollY > appealSecond.offsetTop) {
-          execute();
-        }
-      };
-      window.addEventListener("scroll", handleScroll);
-      const execute = function () {
-        const skillBar = document.querySelectorAll(".skill-percent");
-        for (let i = 0; i < skillBar.length; i++) {
-          skillBar[i].style.width = `${skill[i].percent}%`;
-        }
-      };
-    });
-    return {
-      skill,
-    };
-  },
-};
+
+<script setup>
+import { onMounted } from 'vue'
+import skill from './skill.vue'
+
+const skills = [
+  { name: 'HTML', percent: 90 },
+  { name: 'CSS', percent: 90 },
+  { name: 'JavaScript', percent: 90 },
+  { name: 'Node.js', percent: 40 },
+  { name: 'MySQL', percent: 40 },
+  { name: 'Pug', percent: 30 },
+  { name: 'MongoDB', percent: 30 },
+  { name: 'Vue.js', percent: 30 },
+]
+
+onMounted(() => {
+  const handleScroll = () => {
+    const appealSecond = document.querySelector('.appeal-second')
+    if (window.scrollY > appealSecond.offsetTop) {
+      document.querySelectorAll('.skill-percent').forEach((bar, i) => {
+        bar.style.width = `${skills[i].percent}%`
+      })
+    }
+  }
+  window.addEventListener('scroll', handleScroll)
+})
 </script>
-<style scope></style>
+
+<style scoped></style>
