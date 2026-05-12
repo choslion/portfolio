@@ -69,9 +69,9 @@
               </div>
             </div>
 
-            <div class="career-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="80">
+            <!-- <div class="career-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="80">
               <h3 class="career-card__title">네비톡 설계 및 구축</h3>
-              <p class="career-card__desc">챗봇 폐지 이후 도입된 하단 네비게이션 유도 컴포넌트(네비톡) 구축 담당. <strong>특정 화면에서만 표출하는 조건 처리 방식</strong>과 <strong>Vue 컴포넌트·모듈 중 적합한 제작 방식 선택</strong>에 대해 개발팀과 조율했으며, 제안한 방향이 채택되어 개발팀에 전달 완료했습니다.</p>
+              <p class="career-card__desc">챗봇 폐지 이후 도입된 하단 네비게이션 유도 컴포넌트(네비톡) 구축 담당. <strong>특정 화면에서만 표출하는 조건 처리 방식</strong>과 <strong>Vue 컴포넌트·모듈 중 적합한 제작 방식 선택</strong>에 대해 개발팀과 조율했으며, 제안한 방향이 채택되어 전달 완료했으며 현재 개발 중인 프로젝트입니다.</p>
               <div class="career-tags">
                 <span class="tag">UX 제안</span>
                 <span class="tag">인터랙션</span>
@@ -79,11 +79,11 @@
                 <span class="tag">WCMS</span>
                 <span class="tag">개발 협업</span>
               </div>
-            </div>
+            </div> -->
 
             <div class="career-card career-card--highlight" data-aos="fade-up" data-aos-duration="600" data-aos-delay="160">
               <h3 class="career-card__title">내부 도구 자체 제작</h3>
-              <p class="career-card__desc">반복 업무를 자동화하는 도구를 직접 개발해 팀 전체의 생산성을 높였습니다. 배너 생성기로 작업 시간을 <strong>30분 → 5분</strong>으로 단축해 기획자·디자이너의 요청 처리 속도를 개선. 내부망 전용 로띠 테스트 사이트로 디자이너가 인터넷 없이도 로띠 결과물을 즉시 확인할 수 있는 환경을 제공했습니다.</p>
+              <p class="career-card__desc">기획자·디자이너가 30분 가량 소요하던 배너 작업을 <strong>5분 이내로 단축</strong>하는 배너 생성기를 제작해 제공했습니다. 실제로 팀원들이 적극적으로 활용하며 업무 효율이 개선됐습니다. 내부망 전용 로띠 테스트 사이트도 제작해 디자이너가 인터넷 없이도 로띠 결과물을 즉시 확인할 수 있는 환경을 제공했습니다.</p>
               <div class="career-tags">
                 <span class="tag">HTML</span>
                 <span class="tag">CSS</span>
