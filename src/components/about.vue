@@ -16,7 +16,7 @@
           <span class="logo"><img src="@/assets/img/logo-black.png" alt="로고" /></span>
         </div>
         <ul class="about-detail">
-          <li class="about-me flex-set">
+          <!-- <li class="about-me flex-set">
             <div class="about-me__text flex-set">
               <div class="who font24" data-aos="fade-right" data-aos-duration="1000">Who is this guy?</div>
               <p>
@@ -29,7 +29,7 @@
               <span># 이스라엘 해외봉사 활동 # GS25 점포관리</span>
               <span># 그린컴퓨터학원 뷰(Vue)활용 프론트엔드 웹개발자 양성과정 수료</span>
             </div>
-          </li>
+          </li> -->
           <li class="about-skills">
             <skill v-for="item in skills" :key="item.name" :name="item.name" :percent="item.percent" />
           </li>
