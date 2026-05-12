@@ -83,7 +83,7 @@
 
             <div class="career-card career-card--highlight" data-aos="fade-up" data-aos-duration="600" data-aos-delay="160">
               <h3 class="career-card__title">내부 도구 자체 제작</h3>
-              <p class="career-card__desc">반복 업무를 자동화하는 도구를 직접 개발했습니다. 배너 생성기로 작업 시간을 <strong>30분 → 5분</strong>으로 단축. 내부망 전용 로띠 테스트 사이트, 오프라인 메모앱도 제작해 팀 업무 효율을 개선했습니다.</p>
+              <p class="career-card__desc">반복 업무를 자동화하는 도구를 직접 개발해 팀 전체의 생산성을 높였습니다. 배너 생성기로 작업 시간을 <strong>30분 → 5분</strong>으로 단축해 기획자·디자이너의 요청 처리 속도를 개선. 내부망 전용 로띠 테스트 사이트로 디자이너가 인터넷 없이도 로띠 결과물을 즉시 확인할 수 있는 환경을 제공했습니다.</p>
               <div class="career-tags">
                 <span class="tag">HTML</span>
                 <span class="tag">CSS</span>
