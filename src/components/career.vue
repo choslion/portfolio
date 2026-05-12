@@ -71,7 +71,7 @@
 
             <div class="career-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="80">
               <h3 class="career-card__title">네비톡 기획 제안 및 구축</h3>
-              <p class="career-card__desc">삼성카드 챗봇 폐지 이후 사용자 안내 공백을 해소하기 위해 하단 네비게이션 유도 컴포넌트(네비톡)를 제안. 인터랙션 설계, 노출 조건, <strong>WCMS 데이터 연동을 고려한 Vue 컴포넌트 구조</strong>까지 직접 설계하여 개발팀과 조율 후 <strong>의견이 채택되어 반영 예정</strong>입니다.</p>
+              <p class="career-card__desc">삼성카드 챗봇 폐지 이후 사용자 안내 공백을 해소하기 위해 하단 네비게이션 유도 컴포넌트(네비톡)를 제안. 인터랙션 설계, 노출 조건, <strong>WCMS 데이터 연동을 고려한 Vue 컴포넌트 구조</strong>까지 직접 설계하여 개발팀에 전달 완료했습니다.</p>
               <div class="career-tags">
                 <span class="tag">UX 제안</span>
                 <span class="tag">인터랙션</span>
