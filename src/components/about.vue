@@ -6,15 +6,15 @@
           <h1 id="about" class="title" data-aos="fade" data-aos-duration="700">About</h1>
           <div class="underLine"></div>
         </div>
-        <div class="appeal">
+        <!-- <div class="appeal">
           <h2 class="appeal-text" data-aos="fade-up" data-aos-duration="700">항상 <span class="point">긍정적인</span> 방향을 바라보는 사람</h2>
           <h2 class="appeal-text" data-aos="fade-up" data-aos-duration="1400"><span class="point">역지사지</span>의 마음을 가지고 상대방을 대하는 사람</h2>
           <h2 class="appeal-text" data-aos="fade-up" data-aos-duration="2100">의견을 잘 내고 나와 다른 의견에도 <span class="point">수용</span>할 줄 아는 사람</h2>
-        </div>
-        <div class="appeal-second">
+        </div> -->
+        <!-- <div class="appeal-second">
           <h2 class="appeal-text appeal-point" data-aos="zoom-out-up" data-aos-duration="1500">그래서 뽑아야 할 <span class="point">사람</span></h2>
           <span class="logo"><img src="@/assets/img/logo-black.png" alt="로고" /></span>
-        </div>
+        </div> -->
         <ul class="about-detail">
           <!-- <li class="about-me flex-set">
             <div class="about-me__text flex-set">
