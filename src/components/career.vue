@@ -158,13 +158,13 @@ onMounted(() => {
       ScrollTrigger.create({
         trigger: containerRef.value,
         start: 'top 80px',
-        end: () => `+=${containerRef.value.offsetHeight - stickyRef.value.offsetHeight - 80}`,
+        end: () => `+=${containerRef.value.offsetHeight - stickyRef.value.offsetHeight}`,
         pin: stickyRef.value,
         pinSpacing: false,
       })
 
       // 진행 바 (pin과 동일한 구간으로 동기화)
-      const pinEnd = () => `+=${containerRef.value.offsetHeight - stickyRef.value.offsetHeight - 80}`
+      const pinEnd = () => `+=${containerRef.value.offsetHeight - stickyRef.value.offsetHeight}`
       gsap.to(progressBarRef.value, {
         scaleY: 1,
         ease: 'none',
