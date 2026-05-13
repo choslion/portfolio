@@ -62,7 +62,7 @@ const projects = [
     mainFunc: 'SCSS 가이드 수립, 프로젝트 소개 페이지 30개 구축, 반응형 제작, BX 개선, 자동 배포 시스템 구축 (FTP → 사내 NAS)',
     url: 'https://www.thelisn.com',
     github: '',
-    useSkills: 'HTML, SCSS, JavaScript',
+    useSkills: 'Vue, SCSS, JavaScript',
   },
 ]
 </script>
