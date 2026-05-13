@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div>
     <section class="section-career">
       <div class="section-wrap">
@@ -34,10 +34,13 @@
               <div class="career-tags">
                 <span class="tag">Vue</span>
                 <span class="tag">HTML</span>
+                <span class="tag">SCSS</span>
                 <span class="tag">CSS</span>
                 <span class="tag">JavaScript</span>
+                <span class="tag">WCMS</span>
                 <span class="tag">JIRA</span>
-                <span class="tag">CONFLUENCE</span>
+                <span class="tag">Confluence</span>
+                <span class="tag">Bitbucket</span>
               </div>
             </div>
 
@@ -45,10 +48,11 @@
               <h3 class="career-card__title">신규 화면 구축</h3>
               <p class="career-card__desc">대출이동 시스템 50+ 화면, THE TWENTY 라운지 30+ 화면, 로이어스 라운지 등 주요 프로젝트만 80+ 화면. 운영 전반 합산 <strong>1000개 이상</strong>. 모든 주요 구축에서 <strong>WCMS 데이터 연동을 고려한 Vue 컴포넌트 구조</strong>로 제작했습니다.</p>
               <div class="career-tags">
+                <span class="tag">Vue</span>
                 <span class="tag">HTML</span>
+                <span class="tag">SCSS</span>
                 <span class="tag">CSS</span>
                 <span class="tag">JavaScript</span>
-                <span class="tag">Vue</span>
                 <span class="tag">WCMS</span>
               </div>
             </div>
@@ -159,14 +163,15 @@ onMounted(() => {
         pinSpacing: false,
       })
 
-      // 진행 바
+      // 진행 바 (pin과 동일한 구간으로 동기화)
+      const pinEnd = () => `+=${containerRef.value.offsetHeight - stickyRef.value.offsetHeight - 80}`
       gsap.to(progressBarRef.value, {
         scaleY: 1,
         ease: 'none',
         scrollTrigger: {
           trigger: containerRef.value,
           start: 'top 80px',
-          end: 'bottom bottom',
+          end: pinEnd,
           scrub: true,
         },
       })
