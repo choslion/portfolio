@@ -10,6 +10,9 @@
         <div ref="containerRef" class="career-container">
           <!-- 왼쪽 고정 패널 -->
           <div ref="stickyRef" class="career-sticky">
+            <div class="career-progress">
+              <div ref="progressBarRef" class="career-progress__bar"></div>
+            </div>
             <div class="career-header">
               <span class="career-company__name">리즌디자인</span>
               <span class="career-company__role">웹 퍼블리셔</span>
@@ -107,6 +110,7 @@ const displayNums = ref(stats.map(() => 0))
 const containerRef = ref(null)
 const stickyRef = ref(null)
 const statsRef = ref(null)
+const progressBarRef = ref(null)
 let observer = null
 let started = false
 let ctx = null
@@ -150,6 +154,18 @@ onMounted(() => {
       end: () => `+=${containerRef.value.offsetHeight - stickyRef.value.offsetHeight - 80}`,
       pin: stickyRef.value,
       pinSpacing: false,
+    })
+
+    // 진행 바
+    gsap.to(progressBarRef.value, {
+      scaleY: 1,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: containerRef.value,
+        start: 'top 80px',
+        end: 'bottom bottom',
+        scrub: true,
+      },
     })
 
     // 카드 순차 등장

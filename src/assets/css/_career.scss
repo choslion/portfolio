@@ -6,43 +6,64 @@
   .title { color: #fff; }
 }
 
-.career-item {
-  max-width: 900px;
-  margin: 0 auto;
+.career-container {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
 }
+
+// 왼쪽 고정 패널
+.career-sticky {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.career-progress {
+  width: 3px;
+  background: rgba(#fff, 0.08);
+  border-radius: 9999px;
+  height: 100%;
+  position: absolute;
+  left: -1.5rem;
+  top: 0;
+
+  &__bar {
+    width: 100%;
+    height: 100%;
+    background: $accent;
+    border-radius: 9999px;
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+}
+
+.career-sticky { position: relative; }
 
 .career-header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 2.5rem;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 2rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid rgba(#fff, 0.1);
 }
 
-.career-company {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+.career-company__name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
 
-  &__name {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #fff;
-  }
-
-  &__role {
-    font-size: 0.95rem;
-    color: $accent;
-    font-weight: 500;
-  }
+.career-company__role {
+  font-size: 0.95rem;
+  color: $accent;
+  font-weight: 500;
 }
 
 .career-period {
-  font-size: 0.9rem;
-  color: rgba(#fff, 0.5);
-  text-align: right;
-  padding-top: 4px;
+  font-size: 0.85rem;
+  color: rgba(#fff, 0.45);
+  margin-top: 4px;
 
   em {
     display: block;
@@ -56,45 +77,47 @@
 
 .career-stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin-bottom: 2.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
 }
 
 .career-stat {
   background: rgba(#fff, 0.04);
   border: 1px solid rgba(#fff, 0.08);
   border-radius: 12px;
-  padding: 1.5rem 1rem;
+  padding: 1.1rem 0.75rem;
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 
   &__num {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 800;
     color: #fff;
     line-height: 1;
 
     em {
       font-style: normal;
-      font-size: 1.4rem;
+      font-size: 1.1rem;
       color: $accent;
     }
   }
 
   &__label {
-    font-size: 0.8rem;
-    color: rgba(#fff, 0.55);
+    font-size: 0.72rem;
+    color: rgba(#fff, 0.5);
     line-height: 1.4;
   }
 }
 
+// 오른쪽 카드
 .career-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   gap: 1.25rem;
+  padding-bottom: 2rem;
 }
 
 .career-card {
@@ -102,6 +125,7 @@
   border: 1px solid rgba(#fff, 0.08);
   border-radius: 12px;
   padding: 1.5rem;
+  opacity: 0; // GSAP이 제어
 
   &--highlight {
     border-color: rgba($accent, 0.3);
@@ -145,25 +169,34 @@
   border: 1px solid rgba($accent, 0.25);
 }
 
-@media screen and (max-width: 768px) {
-  .career-header {
+@media screen and (max-width: 900px) {
+  .career-container {
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 2rem;
   }
 
-  .career-period { text-align: left; }
+  .career-sticky {
+    width: 100%;
+    position: static !important;
+    top: auto !important;
+  }
 
   .career-stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  .career-cards {
-    grid-template-columns: 1fr;
+  .career-card {
+    opacity: 1 !important; // 모바일에선 GSAP 무시
+    transform: none !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .career-stats {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width: 500px) {
   .career-company__name { font-size: 1.3rem; }
-  .career-stat__num { font-size: 1.8rem; }
-  .career-stats { gap: 0.75rem; }
 }
