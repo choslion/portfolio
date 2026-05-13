@@ -1,5 +1,43 @@
 @use 'variables' as *;
 
+.section-about {
+  background-color: $dark-2;
+  .title { color: #fff; }
+}
+
+.about-desc {
+  font-size: 1.05rem;
+  color: rgba(#fff, 0.7);
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 2rem 1rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  span {
+    font-size: 0.72rem;
+    color: rgba(#fff, 0.55);
+    text-align: center;
+  }
+}
+
+.skill-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
 .section-title {
   display: flex;
   align-items: center;
@@ -16,176 +54,23 @@
   width: 70px;
   height: 4px;
   background-color: $accent;
-  margin: 25px 0 100px;
+  margin: 25px 0 60px;
   display: flex;
   justify-content: center;
-}
-
-.appeal-text {
-  text-align: center;
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 40pt;
-}
-
-.appeal-point { margin-top: 50px; }
-
-.appeal-second {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  .logo { margin-top: 30px; }
-}
-
-.about-detail {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.about-me {
-  width: 50%;
-  padding: 0 40px;
-  flex-direction: column;
-  text-align: center;
-  box-sizing: border-box;
-
-  img { width: 300px; }
-}
-
-.about-me__text {
-  flex-direction: column;
-
-  p {
-    line-height: 20pt;
-    padding: 20px 0;
-    box-sizing: border-box;
-  }
-
-  span { line-height: 20pt; }
-}
-
-.about-skills { width: 50%; }
-
-.who {
-  box-sizing: border-box;
-  padding-top: 20px;
-  font-weight: 700;
-}
-
-.skill {
-  background-color: #eee;
-  max-width: 90%;
-  position: relative;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  height: 28px;
-  margin: 0 0 15px;
-  border-radius: 12px;
-}
-
-.skill-percent {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0%;
-  transition: width 1.3s;
-  height: 100%;
-  background-color: darken($accent, 5%);
-  border-radius: 12px;
-}
-
-.skill-name {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100%;
-  color: #fff;
-  background-color: $accent;
-  border-radius: 12px;
-}
-
-.percent {
-  z-index: 1;
-  color: #666;
-  text-align: center;
-  padding: 0 5px 0 0;
-}
-
-@media screen and (max-width: 1200px) {
-  .underLine { margin: 25px 0 50px; }
-
-  .appeal-text {
-    font-size: 24px;
-    line-height: 30pt;
-  }
-
-  .appeal-point { margin-top: 30px; }
-
-  .about-detail { flex-direction: column; }
-
-  .about-me {
-    padding: 0 50px 50px;
-    width: 100%;
-  }
-
-  .about-skills {
-    width: 100%;
-    padding-left: 50px;
-  }
 }
 
 @media screen and (max-width: 768px) {
-  .underLine { margin: 20px 0 30px; }
-
-  .appeal-text {
-    font-size: 18px;
-    line-height: 25pt;
+  .skill-grid {
+    grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+    gap: 1.5rem 0.75rem;
   }
 
-  .about-me {
-    padding: 0 0 30px;
-    width: 100%;
+  .skill-icon {
+    width: 30px;
+    height: 30px;
   }
 
-  .percent { padding: 0; }
-}
+  .underLine { margin: 20px 0 40px; }
 
-@media screen and (max-width: 600px) {
-  .title {
-    font-size: 24px;
-    font-weight: 700;
-  }
-
-  .appeal-text {
-    font-size: 16px;
-    line-height: 20pt;
-  }
-
-  .about-me img { width: 250px; }
-
-  .about-me__text {
-    p { font-size: 14px; }
-    span { font-size: 12px; }
-  }
-
-  .about-skills {
-    width: 100%;
-    padding-left: 20px;
-  }
-
-  .skill {
-    font-size: 11px;
-    height: 22px;
-    margin: 0 0 15px;
-  }
-
-  .skill-name {
-    width: 60px;
-    height: 100%;
-  }
+  .title { font-size: 24px; }
 }
