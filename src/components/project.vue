@@ -30,10 +30,10 @@ import projectModule from './projectModuel.vue'
 const projects = [
   {
     title: 'Stock Pro',
-    date: '2025.07 (사이드 프로젝트)',
+    date: '2025.07 ~ 업그레이드 중',
     img: '',
     introduce:
-      'React를 처음 배우면서, 동시에 주식을 처음 접하며 공부하기 위해 만든 개인 대시보드입니다. 직접 FastAPI 백엔드까지 구축해 VIX·FGI·S&P 500 등 시장 지표를 시각화하고, 직접 설계한 종합 점수로 시장 심리를 한눈에 파악할 수 있습니다.',
+      'React를 처음 배우면서, 동시에 주식을 처음 접하며 공부하기 위해 만든 개인 대시보드입니다. 직접 FastAPI 백엔드까지 구축해 VIX·FGI·S&P 500 등 시장 지표를 시각화하고, 직접 설계한 종합 점수로 시장 심리를 한눈에 파악할 수 있습니다. 현재도 필요한 기능을 추가하며 지속 개선 중입니다.',
     contribution: '프론트엔드 100% / 백엔드 직접 구축',
     mainFunc: 'VIX 변동성 차트, 공포탐욕지수(FGI), S&P 500 대시보드, 한국 주식 순위, 섹터별 현황, 자체 설계 종합 심리 점수',
     url: 'https://stock-pro-seven.vercel.app/',
