@@ -42,9 +42,7 @@ const quotes = [
 const randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
 
 function moreView() {
-  const navBarHeight = 50
-  const aboutSection = document.querySelector('.section-about')
-  window.scrollTo({ top: aboutSection.offsetTop - navBarHeight, behavior: 'smooth' })
+  document.querySelector('.section-about').scrollIntoView({ behavior: 'smooth' })
 }
 </script>
 

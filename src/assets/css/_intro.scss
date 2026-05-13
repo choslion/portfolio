@@ -31,7 +31,12 @@
 }
 
 .button {
-  margin-top: 20px;
+  appearance: none;
+  background: transparent;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  margin-top: 2.5rem;
   border: 2px solid #fff;
   padding: 15px 30px;
   cursor: pointer;
