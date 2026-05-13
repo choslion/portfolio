@@ -143,47 +143,58 @@ onMounted(() => {
   )
   if (statsRef.value) observer.observe(statsRef.value)
 
-  // ScrollTrigger pin + 카드 애니메이션
+  // ScrollTrigger pin + 카드 애니메이션 (데스크탑만)
   ctx = gsap.context(() => {
-    const cards = gsap.utils.toArray('.career-card')
+    const mm = gsap.matchMedia()
 
-    // 왼쪽 패널 pin
-    ScrollTrigger.create({
-      trigger: containerRef.value,
-      start: 'top 80px',
-      end: () => `+=${containerRef.value.offsetHeight - stickyRef.value.offsetHeight - 80}`,
-      pin: stickyRef.value,
-      pinSpacing: false,
-    })
+    mm.add('(min-width: 901px)', () => {
+      const cards = gsap.utils.toArray('.career-card')
 
-    // 진행 바
-    gsap.to(progressBarRef.value, {
-      scaleY: 1,
-      ease: 'none',
-      scrollTrigger: {
+      // 왼쪽 패널 pin
+      ScrollTrigger.create({
         trigger: containerRef.value,
         start: 'top 80px',
-        end: 'bottom bottom',
-        scrub: true,
-      },
+        end: () => `+=${containerRef.value.offsetHeight - stickyRef.value.offsetHeight - 80}`,
+        pin: stickyRef.value,
+        pinSpacing: false,
+      })
+
+      // 진행 바
+      gsap.to(progressBarRef.value, {
+        scaleY: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: containerRef.value,
+          start: 'top 80px',
+          end: 'bottom bottom',
+          scrub: true,
+        },
+      })
+
+      // 카드 순차 등장
+      cards.forEach((card) => {
+        gsap.fromTo(card,
+          { opacity: 0, y: 60 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 85%',
+              toggleActions: 'play none none none',
+            },
+          }
+        )
+      })
     })
 
-    // 카드 순차 등장
-    cards.forEach((card) => {
-      gsap.fromTo(card,
-        { opacity: 0, y: 60 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 85%',
-            toggleActions: 'play none none none',
-          },
-        }
-      )
+    // 모바일: 카드 즉시 표시
+    mm.add('(max-width: 900px)', () => {
+      gsap.utils.toArray('.career-card').forEach((card) => {
+        gsap.set(card, { opacity: 1, y: 0 })
+      })
     })
   })
 })
