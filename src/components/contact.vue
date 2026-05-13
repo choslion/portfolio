@@ -10,11 +10,11 @@
         <h4>Tel : 010-4755-6005</h4>
         <h4>Email : cshyeok24@gmail.com</h4>
         <div class="sns-box">
-          <a target="_blank" href="https://github.com/choslion?tab=repositories">
-            <font-awesome-icon class="icons" icon="fa-brands fa-github" size="3x" />
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/choslion?tab=repositories" aria-label="GitHub 저장소 방문 (새 탭)">
+            <font-awesome-icon class="icons" icon="fa-brands fa-github" size="3x" aria-hidden="true" />
           </a>
-          <a target="_blank" href="https://www.instagram.com/cshyeok__/">
-            <font-awesome-icon class="icons" icon="fa-brands fa-instagram" size="3x" />
+          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/cshyeok__/" aria-label="Instagram 방문 (새 탭)">
+            <font-awesome-icon class="icons" icon="fa-brands fa-instagram" size="3x" aria-hidden="true" />
           </a>
         </div>
       </div>

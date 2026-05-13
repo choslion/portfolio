@@ -2,20 +2,20 @@
   <div>
     <section class="section-intro">
       <div class="flex">
-        <h1 class="logo">
-          <a href=""><img src="@/assets/img/logo-white.png" alt="로고" /></a>
-        </h1>
+        <div class="logo">
+          <a href=""><img src="@/assets/img/logo-white.png" alt="조승혁 포트폴리오 로고" /></a>
+        </div>
         <h1 class="intro-text">
           안녕하세요, 저는 <span class="point">웹 퍼블리셔</span> 조승혁입니다.
         </h1>
-        <div class="button" @click="moreView">
+        <button type="button" class="button" @click="moreView">
           View my work
-          <font-awesome-icon icon="fa-solid fa-right-long" />
-        </div>
+          <font-awesome-icon icon="fa-solid fa-right-long" aria-hidden="true" />
+        </button>
       </div>
       <div class="quotes" data-aos="fade-up" data-aos-duration="700" data-aos-offset="0">
-        <h3 class="quote">{{ randomQuote.quote }}</h3>
-        <h4 class="author">{{ randomQuote.author }}</h4>
+        <p class="quote">{{ randomQuote.quote }}</p>
+        <p class="author">{{ randomQuote.author }}</p>
       </div>
     </section>
   </div>

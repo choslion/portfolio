@@ -29,8 +29,13 @@
         </div>
       </div>
     </Transition>
-    <button class="nav-trigger" @click="open = !open">
-      <font-awesome-icon :icon="open ? 'fa-regular fa-circle-xmark' : 'fa-solid fa-bars'" />
+    <button
+      class="nav-trigger"
+      @click="open = !open"
+      :aria-label="open ? '메뉴 닫기' : '메뉴 열기'"
+      :aria-expanded="open"
+    >
+      <font-awesome-icon :icon="open ? 'fa-regular fa-circle-xmark' : 'fa-solid fa-bars'" aria-hidden="true" />
     </button>
   </div>
 </template>
