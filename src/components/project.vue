@@ -33,12 +33,12 @@ const projects = [
     date: '2025.07 (사이드 프로젝트)',
     img: '',
     introduce:
-      '주식 시장에 대한 이해를 높이고 React를 직접 학습하기 위해 제작한 금융 대시보드입니다. VIX(변동성 지수), 공포탐욕지수(FGI), S&P 500 현황을 시각화하고, 종합 점수로 시장 심리를 해석합니다.',
-    contribution: '프론트엔드 100% (백엔드 협업)',
-    mainFunc: 'VIX 차트, 공포탐욕지수, S&P 500 대시보드, 종합 심리 점수, 로딩·에러 상태 처리',
-    url: '',
+      'React를 처음 배우면서, 동시에 주식을 처음 접하며 공부하기 위해 만든 개인 대시보드입니다. 직접 FastAPI 백엔드까지 구축해 VIX·FGI·S&P 500 등 시장 지표를 시각화하고, 직접 설계한 종합 점수로 시장 심리를 한눈에 파악할 수 있습니다.',
+    contribution: '프론트엔드 100% / 백엔드 직접 구축',
+    mainFunc: 'VIX 변동성 차트, 공포탐욕지수(FGI), S&P 500 대시보드, 한국 주식 순위, 섹터별 현황, 자체 설계 종합 심리 점수',
+    url: 'https://stock-pro-seven.vercel.app/',
     github: 'https://github.com/choslion/stock-pro',
-    useSkills: 'React 19, Vite, Tailwind CSS, Recharts, Framer Motion, Zustand, Axios',
+    useSkills: 'React 19, Vite, Tailwind CSS, Recharts, Framer Motion, Zustand, Axios / FastAPI, Python, yfinance, Render',
   },
   {
     title: 'SSOK (쏙)',
