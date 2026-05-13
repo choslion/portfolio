@@ -40,10 +40,12 @@
               <h3 class="career-card__title">삼성카드 디지털채널 운영</h3>
               <p class="career-card__desc">삼성카드 디지털채널의 운영·개선 이슈를 JIRA 기반으로 관리하며 500건 이상 처리. 배너 제작, 기획 반영, 긴급 수정 등 디지털채널 전반의 퍼블리싱 업무를 담당했습니다.</p>
               <div class="career-tags">
+                <span class="tag">Vue</span>
                 <span class="tag">HTML</span>
                 <span class="tag">CSS</span>
                 <span class="tag">JavaScript</span>
                 <span class="tag">JIRA</span>
+                <span class="tag">CONFLUENCE</span>
               </div>
             </div>
 
