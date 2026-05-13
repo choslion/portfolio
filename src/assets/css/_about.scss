@@ -24,6 +24,17 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  background: rgba(#fff, 0.04);
+  border: 1px solid rgba(#fff, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem 0.75rem;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+
+  &:hover {
+    background: rgba(#fff, 0.08);
+    border-color: rgba($accent, 0.35);
+    transform: translateY(-3px);
+  }
 
   span {
     font-size: 0.72rem;
@@ -36,6 +47,7 @@
   width: 36px;
   height: 36px;
   object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
 }
 
 .section-title {
