@@ -7,12 +7,6 @@
         <div v-if="img" class="project-info__imgs">
           <img :src="img" alt="프로젝트 메인" />
         </div>
-        <div v-else class="project-thumb" :style="{ '--c': color }">
-          <div class="project-thumb__blob project-thumb__blob--1"></div>
-          <div class="project-thumb__blob project-thumb__blob--2"></div>
-          <div class="project-thumb__blob project-thumb__blob--3"></div>
-          <span class="project-thumb__name">{{ title }}</span>
-        </div>
         <div class="project-info__contents" :class="{ 'project-info__contents--full': !img }">
           <div>{{ introduce }}</div>
           <hr />
