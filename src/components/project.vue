@@ -12,6 +12,7 @@
           :title="item.title"
           :date="item.date"
           :img="item.img"
+          :color="item.color"
           :introduce="item.introduce"
           :contribution="item.contribution"
           :mainFunc="item.mainFunc"
@@ -32,6 +33,7 @@ const projects = [
     title: 'Stock Pro',
     date: '2025.07 ~ 업그레이드 중',
     img: '',
+    color: '#22c55e',
     introduce:
       'React와 주식을 동시에 공부하기 위해 만든 개인 대시보드입니다. FastAPI 백엔드를 직접 구축하고, Claude Haiku API를 활용한 AI 마켓 브리핑 기능을 구현해 시장 상황을 AI가 분석·요약해줍니다. VIX·FGI·S&P 500 등 주요 지표를 시각화하며, 현재도 기능을 추가하며 개선 중입니다.',
     contribution: '100% (프론트엔드 · FastAPI 백엔드)',
@@ -44,6 +46,7 @@ const projects = [
     title: 'SSOK (쏙)',
     date: '2026.03 ~ 2026.04 (개인 프로젝트)',
     img: '',
+    color: '#818cf8',
     introduce:
       '영수증, 설명서, 보증서 등 실물 문서를 디지털로 변환해 브라우저에 로컬 저장하는 프라이버시 중심 문서 보관 앱입니다. 클라우드 로그인 없이 IndexedDB에 데이터를 저장하며 PWA로 홈 화면 설치가 가능합니다.',
     contribution: '100%',
@@ -56,6 +59,7 @@ const projects = [
     title: '리즌디자인 홈페이지',
     date: '2024.05 ~ 현재 (운영 중)',
     img: '',
+    color: '#f59e0b',
     introduce:
       '리즌디자인 자사 홈페이지를 2년 이상 운영 및 유지보수했습니다. SCSS 가이드를 수립하고 프로젝트 소개 페이지 약 30개를 구축하였으며, 반응형 제작, BX 개선, 기존 페이지 리뉴얼, FTP 기반 NAS 자동 배포 시스템 구축까지 담당했습니다.',
     contribution: '100%',
