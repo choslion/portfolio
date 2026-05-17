@@ -33,12 +33,12 @@ const projects = [
     date: '2025.07 ~ 업그레이드 중',
     img: '',
     introduce:
-      'React를 처음 배우면서, 동시에 주식을 처음 접하며 공부하기 위해 만든 개인 대시보드입니다. 직접 FastAPI 백엔드까지 구축해 VIX·FGI·S&P 500 등 시장 지표를 시각화하고, 직접 설계한 종합 점수로 시장 심리를 한눈에 파악할 수 있습니다. 현재도 필요한 기능을 추가하며 지속 개선 중입니다.',
+      'React와 주식을 동시에 공부하기 위해 만든 개인 대시보드입니다. FastAPI 백엔드를 직접 구축하고, Claude Haiku API를 활용한 AI 마켓 브리핑 기능을 구현해 시장 상황을 AI가 분석·요약해줍니다. VIX·FGI·S&P 500 등 주요 지표를 시각화하며, 현재도 기능을 추가하며 개선 중입니다.',
     contribution: '100% (프론트엔드 · FastAPI 백엔드)',
-    mainFunc: 'VIX 변동성 차트, 공포탐욕지수(FGI), S&P 500 대시보드, 한국 주식 순위, 섹터별 현황, 자체 설계 종합 심리 점수',
+    mainFunc: 'AI 마켓 브리핑 (Claude Haiku), VIX 변동성 차트, 공포탐욕지수(FGI), S&P 500 대시보드, 한국 주식 검색·순위, ETF 카테고리, 상품·환율 추적, 섹터별 현황, 자체 설계 종합 심리 점수',
     url: 'https://stock-pro-seven.vercel.app/',
     github: 'https://github.com/choslion/stock-pro',
-    useSkills: 'React 19, Vite, Tailwind CSS, Recharts, Framer Motion, Zustand, Axios / FastAPI, Python, yfinance, Render',
+    useSkills: 'React 19, Vite, Tailwind CSS, Recharts, Lightweight-charts, Framer Motion, Zustand, Axios / FastAPI, Python, yfinance, Claude Haiku (Anthropic API), Render',
   },
   {
     title: 'SSOK (쏙)',
