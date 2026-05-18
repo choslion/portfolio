@@ -48,16 +48,30 @@
   }
 }
 
-.quotes {
-  margin-top: 250px;
+.typewriter-wrap {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
   z-index: 1;
-  line-height: 25pt;
 }
 
-.quote { font-size: 24px; }
-.author {
-  font-size: 20px;
-  opacity: 0.8;
+.typewriter-text {
+  font-size: 1.1rem;
+  color: rgba(#fff, 0.6);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.typewriter-cursor {
+  font-size: 1.2rem;
+  color: $accent;
+  font-weight: 300;
+  opacity: 0;
+  transition: opacity 0.1s;
+
+  &.visible { opacity: 1; }
 }
 
 @media screen and (max-width: 600px) {
@@ -76,6 +90,6 @@
     padding: 15px 20px;
   }
 
-  .quote { font-size: 13px; }
-  .author { font-size: 14px; }
+  .typewriter-text { font-size: 0.85rem; }
+  .typewriter-wrap { white-space: normal; text-align: center; width: 90%; }
 }
