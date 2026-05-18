@@ -13,10 +13,25 @@
   margin-bottom: 3rem;
 }
 
+.skill-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.skill-group__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $accent;
+  margin-bottom: 1rem;
+}
+
 .skill-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  gap: 2rem 1rem;
+  gap: 1rem;
 }
 
 .skill-item {

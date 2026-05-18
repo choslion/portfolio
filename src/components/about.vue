@@ -8,19 +8,28 @@
         </div>
 
         <p class="about-desc" data-aos="fade-up" data-aos-duration="700">
-          현재 <span class="point">웹 퍼블리셔</span>로 재직 중이며, 마크업부터 배포 자동화까지 폭넓게 다뤄왔습니다.
+          웹 퍼블리싱을 기반으로 실제 운영 환경에서 발생하는 화면 품질, 접근성, 업무 자동화, 배포 효율 문제를 개선해왔습니다.
         </p>
 
-        <div class="skill-grid">
+        <div class="skill-groups">
           <div
-            v-for="skill in skills"
-            :key="skill.label"
-            class="skill-item"
+            v-for="group in skillGroups"
+            :key="group.label"
+            class="skill-group"
             data-aos="fade-up"
             data-aos-duration="600"
           >
-            <img :src="iconDataUrl(skill)" :alt="skill.label" class="skill-icon" />
-            <span>{{ skill.label }}</span>
+            <h3 class="skill-group__label">{{ group.label }}</h3>
+            <div class="skill-grid">
+              <div
+                v-for="skill in group.skills"
+                :key="skill.label"
+                class="skill-item"
+              >
+                <img :src="iconDataUrl(skill)" :alt="skill.label" class="skill-icon" />
+                <span>{{ skill.label }}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -32,7 +41,6 @@
 import {
   siHtml5, siCss, siSass, siJavascript, siTypescript,
   siVuedotjs, siNuxt, siReact,
-  siPython, siNodedotjs,
   siGit, siGithub,
   siFigma, siJira, siConfluence, siBitbucket,
 } from 'simple-icons'
@@ -40,24 +48,37 @@ import {
 // Zeplin is not in simple-icons npm package — hardcoded SVG
 const zeplinSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#FDBD39" d="M3 5h18v2.5L7.5 17H21v2H3v-2.5L16.5 7H3V5z"/></svg>`
 
-const skills = [
-  { si: siHtml5,      label: 'HTML5' },
-  { si: siCss,        label: 'CSS3' },
-  { si: siSass,       label: 'SCSS' },
-  { si: siJavascript, label: 'JavaScript' },
-  { si: siTypescript, label: 'TypeScript' },
-  { si: siVuedotjs,   label: 'Vue.js' },
-  { si: siNuxt,       label: 'Nuxt' },
-  { si: siReact,      label: 'React' },
-  { si: siPython,     label: 'Python' },
-  { si: siNodedotjs,  label: 'Node.js' },
-  { si: siGit,        label: 'Git' },
-  { si: siGithub,     label: 'GitHub', color: '#ffffff' },
-  { si: siFigma,      label: 'Figma' },
-  { si: siJira,       label: 'JIRA' },
-  { si: siConfluence, label: 'Confluence' },
-  { si: siBitbucket,  label: 'Bitbucket' },
-  { svg: zeplinSvg,   label: 'Zeplin' },
+const skillGroups = [
+  {
+    label: '마크업 / 스타일',
+    skills: [
+      { si: siHtml5,      label: 'HTML5' },
+      { si: siCss,        label: 'CSS3' },
+      { si: siSass,       label: 'SCSS' },
+    ],
+  },
+  {
+    label: '언어 · 프레임워크',
+    skills: [
+      { si: siJavascript, label: 'JavaScript' },
+      { si: siTypescript, label: 'TypeScript' },
+      { si: siVuedotjs,   label: 'Vue.js' },
+      { si: siNuxt,       label: 'Nuxt' },
+      { si: siReact,      label: 'React' },
+    ],
+  },
+  {
+    label: '협업 · 도구',
+    skills: [
+      { si: siGit,        label: 'Git' },
+      { si: siGithub,     label: 'GitHub', color: '#ffffff' },
+      { si: siFigma,      label: 'Figma' },
+      { si: siJira,       label: 'JIRA' },
+      { si: siConfluence, label: 'Confluence' },
+      { si: siBitbucket,  label: 'Bitbucket' },
+      { svg: zeplinSvg,   label: 'Zeplin' },
+    ],
+  },
 ]
 
 function iconDataUrl(skill) {
