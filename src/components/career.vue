@@ -68,7 +68,7 @@
             </div>
 
             <div class="career-card career-card--highlight">
-              <h3 class="career-card__title">내부 도구 자체 제작</h3>
+              <h3 class="career-card__title">팀 업무 효율화를 위한 내부 도구 제작</h3>
               <p class="career-card__desc">기획자·디자이너가 30분 가량 소요하던 배너 작업을 <strong>5분 이내로 단축</strong>하는 배너 생성기를 제작해 제공했습니다. 실제로 팀원들이 적극적으로 활용하며 업무 효율이 개선됐습니다. 내부망 전용 로띠 테스트 사이트도 제작해 디자이너가 인터넷 없이도 로띠 결과물을 즉시 확인할 수 있는 환경을 제공했습니다.</p>
               <div class="career-tags">
                 <span class="tag">HTML</span>
@@ -79,7 +79,7 @@
             </div>
 
             <div class="career-card">
-              <h3 class="career-card__title">CI/CD 파이프라인 설계 및 구축</h3>
+              <h3 class="career-card__title">자사 홈페이지 자동 배포 환경 구축</h3>
               <p class="career-card__desc">자사 홈페이지 저장소 구조를 직접 재설계하고 자동 배포 파이프라인을 구축했습니다. <strong>feature·hotfix → develop</strong> 머지 시 테스트 서버 자동 배포, <strong>develop → main PR</strong>은 관리자 승인 후 운영 서버 배포되는 이중 파이프라인을 GitHub Actions + FTP 연동으로 직접 구축했습니다.</p>
               <div class="career-tags">
                 <span class="tag">GitHub Actions</span>
