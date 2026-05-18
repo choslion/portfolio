@@ -76,6 +76,10 @@
 }
 
 @media screen and (max-width: 600px) {
+  .logo {
+    margin: 80px 0 32px;
+  }
+
   .logo img {
     width: 150px;
     height: 75px;
@@ -91,6 +95,15 @@
     padding: 15px 20px;
   }
 
+  .typewriter-wrap {
+    left: 0;
+    right: 0;
+    transform: none;
+    white-space: normal;
+    text-align: center;
+    padding: 0 1.5rem;
+    bottom: 8%;
+  }
+
   .typewriter-text { font-size: 0.85rem; }
-  .typewriter-wrap { white-space: normal; text-align: center; width: 90%; }
 }
