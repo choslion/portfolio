@@ -41,11 +41,10 @@
 import {
   siHtml5, siCss, siSass, siJavascript, siTypescript,
   siVuedotjs, siNuxt, siReact,
-  siGit, siGithub,
+  siGithub,
   siFigma, siJira, siConfluence, siBitbucket,
 } from 'simple-icons'
 
-// Zeplin is not in simple-icons npm package — hardcoded SVG
 const zeplinSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#FDBD39" d="M3 5h18v2.5L7.5 17H21v2H3v-2.5L16.5 7H3V5z"/></svg>`
 
 const skillGroups = [
@@ -70,7 +69,6 @@ const skillGroups = [
   {
     label: '협업 · 도구',
     skills: [
-      { si: siGit,        label: 'Git' },
       { si: siGithub,     label: 'GitHub', color: '#ffffff' },
       { si: siFigma,      label: 'Figma' },
       { si: siJira,       label: 'JIRA' },
