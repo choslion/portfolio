@@ -1,23 +1,31 @@
 <template>
   <div>
     <section class="section-intro">
-      <div class="flex">
+      <div class="intro-deco intro-deco--1"></div>
+      <div class="intro-deco intro-deco--2"></div>
+
+      <div class="intro-inner">
         <div class="logo">
           <a href=""><img src="@/assets/img/logo-white.png" alt="조승혁 포트폴리오 로고" /></a>
         </div>
+
         <h1 class="intro-text">
           안녕하세요.<br>
           <span class="point">서비스 운영</span>과 <span class="point">화면 품질 개선</span>을 고민하는<br>
           웹 퍼블리셔 조승혁입니다.
         </h1>
+
         <button type="button" class="button" @click="moreView">
           View my work
           <font-awesome-icon icon="fa-solid fa-right-long" aria-hidden="true" />
         </button>
-      </div>
 
-      <div class="typewriter-wrap" data-aos="fade-up" data-aos-duration="700" data-aos-offset="0">
-        <span class="typewriter-text">{{ displayed }}</span><span class="typewriter-cursor" :class="{ visible: cursorVisible }">|</span>
+        <div class="typewriter-wrap" data-aos="fade-up" data-aos-duration="700">
+          <span class="typewriter-text">{{ displayed }}</span><span
+            class="typewriter-cursor"
+            :class="{ visible: cursorVisible }"
+          >|</span>
+        </div>
       </div>
     </section>
   </div>
