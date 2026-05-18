@@ -59,7 +59,7 @@
 
             <div class="career-card">
               <h3 class="career-card__title">웹 접근성 개선</h3>
-              <p class="career-card__desc">WCAG 기준 명세를 직접 검토하며 600p 이상의 접근성 이슈를 처리. 스크린리더 호환, 키보드 포커스 순서, 색상 대비 등을 기준에 맞춰 개선했습니다.</p>
+              <p class="career-card__desc">10개 메뉴, 약 600페이지 규모의 접근성 검토를 수행했습니다. WCAG 기준을 참고해 키보드 포커스, 스크린리더 인식, 대체 텍스트, 색상 대비 등을 검토하고 개선 사항을 반영했습니다.</p>
               <div class="career-tags">
                 <span class="tag">웹 접근성</span>
                 <span class="tag">WCAG</span>
@@ -69,7 +69,7 @@
 
             <div class="career-card career-card--highlight">
               <h3 class="career-card__title">팀 업무 효율화를 위한 내부 도구 제작</h3>
-              <p class="career-card__desc">기획자·디자이너가 30분 가량 소요하던 배너 작업을 <strong>5분 이내로 단축</strong>하는 배너 생성기를 제작해 제공했습니다. 실제로 팀원들이 적극적으로 활용하며 업무 효율이 개선됐습니다. 내부망 전용 로띠 테스트 사이트도 제작해 디자이너가 인터넷 없이도 로띠 결과물을 즉시 확인할 수 있는 환경을 제공했습니다.</p>
+              <p class="career-card__desc">기획·디자인·퍼블리싱 간 반복 확인 업무를 줄이기 위해 배너 생성기, Lottie 확인 도구, 오프라인 메모앱을 제작했습니다. 배너 확인·전달 시간은 건당 <strong>30분~1시간 → 5분 이내</strong>로 단축했습니다.</p>
               <div class="career-tags">
                 <span class="tag">HTML</span>
                 <span class="tag">CSS</span>
@@ -104,9 +104,9 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const stats = [
-  { num: 500, suffix: '+', label: '운영·개선 이슈 처리' },
-  { num: 80,  suffix: '+', label: '신규·개편 화면 구축' },
-  { num: 600, suffix: 'p', label: '웹 접근성 검토' },
+  { num: 500, suffix: '+', label: '운영·개선 이슈' },
+  { num: 80,  suffix: '+', label: '신규·개편 화면' },
+  { num: 600, suffix: 'p', label: '접근성 검토' },
   { num: 2,   suffix: '년', label: '홈페이지 운영' },
 ]
 
