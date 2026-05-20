@@ -30,13 +30,14 @@
           <div class="career-cards">
             <div class="career-card">
               <h3 class="career-card__title">삼성카드 디지털채널 운영</h3>
-              <p class="career-card__desc">삼성카드 디지털채널의 운영·개선 이슈를 JIRA 기반으로 관리하며 500건 이상 처리. 기획자·디자이너와 협업하며 기획 반영, 긴급 수정 등 디지털채널 전반의 퍼블리싱 업무를 담당했습니다.</p>
+              <p class="career-card__desc">삼성카드 디지털채널의 운영·개선 이슈를 JIRA 기반으로 관리하며 500건 이상 처리. 기획자·디자이너와 협업하며 기획 반영, 긴급 수정, JavaScript·jQuery 기반 동적 UI 구현, SCSS 트랜지션 적용 등 디지털채널 전반의 퍼블리싱 업무를 담당했습니다.</p>
               <div class="career-tags">
                 <span class="tag">Vue</span>
                 <span class="tag">HTML</span>
                 <span class="tag">SCSS</span>
                 <span class="tag">CSS</span>
                 <span class="tag">JavaScript</span>
+                <span class="tag">jQuery</span>
                 <span class="tag">WCMS</span>
                 <span class="tag">JIRA</span>
                 <span class="tag">Confluence</span>
@@ -46,7 +47,7 @@
 
             <div class="career-card">
               <h3 class="career-card__title">신규 화면 구축</h3>
-              <p class="career-card__desc">대출이동 시스템 50+ 화면, THE TWENTY 라운지 30+ 화면, 로이어스 라운지 등 주요 프로젝트만 80+ 화면. 운영 전반 합산 <strong>1000개 이상</strong>. 모든 주요 구축에서 <strong>WCMS 데이터 연동을 고려한 Vue 컴포넌트 구조</strong>로 제작했습니다.</p>
+              <p class="career-card__desc">대출이동 시스템 50+ 화면, THE TWENTY 라운지 30+ 화면, 로이어스 라운지 등 주요 프로젝트만 80+ 화면. 모든 주요 구축에서 <strong>WCMS 데이터 연동을 고려한 Vue 컴포넌트 구조</strong>로 제작했으며, 네비톡 공통 컴포넌트 반영 시 CSS 인터랙션도 적용했습니다.</p>
               <div class="career-tags">
                 <span class="tag">Vue</span>
                 <span class="tag">HTML</span>
@@ -80,13 +81,14 @@
 
             <div class="career-card">
               <h3 class="career-card__title">자사 홈페이지 자동 배포 환경 구축</h3>
-              <p class="career-card__desc">자사 홈페이지 저장소 구조를 직접 재설계하고 자동 배포 파이프라인을 구축했습니다. <strong>feature·hotfix → develop</strong> 머지 시 테스트 서버 자동 배포, <strong>develop → main PR</strong>은 관리자 승인 후 운영 서버 배포되는 이중 파이프라인을 GitHub Actions + FTP 연동으로 직접 구축했습니다.</p>
+              <p class="career-card__desc">자사 홈페이지 저장소 구조를 직접 재설계하고 자동 배포 파이프라인을 구축했습니다. <strong>feature·hotfix → develop</strong> 머지 시 테스트 서버 자동 배포, <strong>develop → main PR</strong>은 관리자 승인 후 운영 서버 배포되는 이중 파이프라인을 GitHub Actions + FTP 연동으로 직접 구축했습니다. Figma를 활용해 디자이너와 화면 구조 및 스타일을 협의하며 작업했습니다.</p>
               <div class="career-tags">
                 <span class="tag">GitHub Actions</span>
                 <span class="tag">Git Flow</span>
                 <span class="tag">FTP</span>
                 <span class="tag">NAS</span>
                 <span class="tag">CI/CD</span>
+                <span class="tag">Figma</span>
               </div>
             </div>
           </div>
