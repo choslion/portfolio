@@ -40,7 +40,7 @@
 <script setup>
 import {
   siHtml5, siCss, siSass, siJavascript, siTypescript,
-  siVuedotjs, siNuxt, siReact,
+  siVuedotjs, siNuxt, siReact, siJquery,
   siGithub,
   siFigma, siJira, siConfluence, siBitbucket,
 } from 'simple-icons'
@@ -60,6 +60,7 @@ const skillGroups = [
     label: '언어 · 프레임워크',
     skills: [
       { si: siJavascript, label: 'JavaScript' },
+      { si: siJquery,     label: 'jQuery' },
       { si: siTypescript, label: 'TypeScript' },
       { si: siVuedotjs,   label: 'Vue.js' },
       { si: siNuxt,       label: 'Nuxt' },
