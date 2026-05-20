@@ -27,14 +27,15 @@
 
 <script setup>
 import projectModule from './projectModuel.vue'
-import ssokCapture from '@/assets/img/ssok-capture.jpg'
-import theLisnCapture from '@/assets/img/thelisn-capture.jpg'
+import ssokThumbnail from '@/assets/img/ssok-thumbnail.jpg'
+import stockThumbnail from '@/assets/img/stock-thumbnail.jpg'
+import lisnThumbnail from '@/assets/img/lisn-thumbnail.jpg'
 
 const projects = [
   {
     title: 'Stock Pro',
     date: '2025.07 ~ 업그레이드 중',
-    img: '',
+    img: stockThumbnail,
     color: '#22c55e',
     introduce:
       'React 기반으로 제작한 투자 지표 대시보드입니다. VIX, FGI, S&P 500 등 주요 지표를 시각화하고, Claude Haiku API를 활용한 AI 마켓 브리핑 기능을 구현했습니다.',
@@ -47,7 +48,7 @@ const projects = [
   {
     title: 'SSOK (쏙)',
     date: '2026.03 ~ 2026.04 (개인 프로젝트)',
-    img: ssokCapture,
+    img: ssokThumbnail,
     color: '#818cf8',
     introduce:
       '기획부터 UI 설계, 프론트엔드 구현까지 단독으로 진행한 개인 프로젝트입니다. 영수증·보증서·설명서 등 실물 문서를 브라우저 로컬 저장소에 보관하고, OCR을 통해 문서 정보를 관리할 수 있도록 설계했습니다.',
@@ -60,7 +61,7 @@ const projects = [
   {
     title: '리즌디자인 홈페이지',
     date: '2024.05 ~ 현재 (운영 중)',
-    img: theLisnCapture,
+    img: lisnThumbnail,
     color: '#f59e0b',
     introduce:
       '약 2년간 운영 중인 자사 홈페이지 프로젝트입니다. 프로젝트 소개 페이지 구축, 신규 아티클 추가, BX 개선, GitHub Actions 기반 자동배포 흐름 구축을 담당했습니다.',
