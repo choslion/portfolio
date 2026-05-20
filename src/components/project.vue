@@ -19,6 +19,7 @@
           :url="item.url"
           :github="item.github"
           :useSkills="item.useSkills"
+          :note="item.note"
         />
       </div>
     </section>
@@ -44,6 +45,7 @@ const projects = [
     url: 'https://stock-pro-seven.vercel.app/',
     github: 'https://github.com/choslion/stock-pro',
     useSkills: 'React 19, Vite, Tailwind CSS, Recharts, Lightweight-charts, Framer Motion, Zustand, Axios / FastAPI, Python, yfinance, Claude Haiku (Anthropic API), Render',
+    note: '※ Render 배포 환경 특성상 최초 접속 시 약 30~60초의 로딩 시간이 발생할 수 있습니다.',
   },
   {
     title: 'SSOK (쏙)',

@@ -9,6 +9,7 @@
         </div>
         <div class="project-info__contents" :class="{ 'project-info__contents--full': !img }">
           <div>{{ introduce }}</div>
+          <p v-if="note" class="project-note">{{ note }}</p>
           <hr />
           <ul class="project-contents__ul">
             <li class="project-contents__li">
@@ -65,6 +66,7 @@ defineProps({
   url: String,
   github: String,
   useSkills: String,
+  note: String,
 })
 </script>
 
