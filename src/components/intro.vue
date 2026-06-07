@@ -1,8 +1,6 @@
 <template>
   <div>
     <section class="section-intro">
-      <div class="intro-deco intro-deco--1"></div>
-      <div class="intro-deco intro-deco--2"></div>
       <intro-fx />
 
       <div class="intro-inner">

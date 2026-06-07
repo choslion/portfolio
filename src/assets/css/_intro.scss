@@ -12,7 +12,7 @@
   background: linear-gradient(135deg, $dark-1, $dark-2 60%, #0a1a20);
 }
 
-// 마우스 인터랙티브 FX (spotlight + dot grid)
+// 마우스 인터랙티브 FX (drifting blobs + spotlight)
 .intro-fx {
   position: absolute;
   inset: 0;
@@ -23,45 +23,64 @@
     position: absolute;
     inset: 0;
     background: radial-gradient(
-      460px circle at var(--fx-x, 50%) var(--fx-y, 50%),
-      rgba($accent, 0.13),
+      480px circle at var(--fx-x, 50%) var(--fx-y, 50%),
+      rgba($accent, 0.16),
       transparent 60%
     );
-    transition: opacity 0.35s ease;
+    transition: opacity 0.4s ease;
     mix-blend-mode: screen;
   }
 
-  &__dots {
+  &__blob {
     position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    will-change: transform;
+    mix-blend-mode: screen;
+
+    &--a {
+      width: 60vmin;
+      height: 60vmin;
+      top: -10vmin;
+      left: -10vmin;
+      background: rgba($accent, 0.45);
+      animation: blob-drift-a 22s ease-in-out infinite alternate;
+    }
+
+    &--b {
+      width: 50vmin;
+      height: 50vmin;
+      bottom: -12vmin;
+      right: -8vmin;
+      background: rgba(#0ea5e9, 0.35);
+      animation: blob-drift-b 26s ease-in-out infinite alternate;
+    }
+
+    &--c {
+      width: 40vmin;
+      height: 40vmin;
+      top: 35%;
+      left: 35%;
+      background: rgba($accent, 0.22);
+      animation: blob-drift-c 30s ease-in-out infinite alternate;
+    }
   }
 }
 
-// 배경 데코
-.intro-deco {
-  position: absolute;
-  border-radius: 50%;
-  background: $accent;
-  filter: blur(100px);
-  pointer-events: none;
+@keyframes blob-drift-a {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(14vmin, 8vmin) scale(1.1); }
+}
 
-  &--1 {
-    width: 480px;
-    height: 480px;
-    top: -160px;
-    right: -120px;
-    opacity: 0.06;
-  }
+@keyframes blob-drift-b {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-12vmin, -6vmin) scale(1.08); }
+}
 
-  &--2 {
-    width: 320px;
-    height: 320px;
-    bottom: -80px;
-    left: -80px;
-    opacity: 0.05;
-  }
+@keyframes blob-drift-c {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(10vmin, -10vmin) scale(1.15); }
 }
 
 .intro-inner {
