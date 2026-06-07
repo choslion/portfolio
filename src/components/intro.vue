@@ -6,7 +6,7 @@
 
       <div class="intro-inner">
         <div class="logo">
-          <a href=""><img src="@/assets/img/logo-white.png" alt="조승혁 포트폴리오 로고" /></a>
+          <img src="@/assets/img/logo-white.png" alt="조승혁 포트폴리오 로고" />
         </div>
 
         <h1 class="intro-text">

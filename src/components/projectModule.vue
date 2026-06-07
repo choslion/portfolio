@@ -1,6 +1,11 @@
 <template>
   <div>
-    <div class="project-wrap">
+    <div
+      class="project-wrap"
+      data-aos="fade-up"
+      data-aos-duration="700"
+      :data-aos-delay="delay"
+    >
       <div class="project-title">{{ title }}</div>
       <div class="project-date">{{ date }}</div>
       <div class="project-info">
@@ -67,6 +72,7 @@ defineProps({
   github: String,
   useSkills: String,
   note: String,
+  delay: { type: Number, default: 0 },
 })
 </script>
 

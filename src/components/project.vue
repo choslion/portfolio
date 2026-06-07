@@ -7,7 +7,7 @@
           <div class="underLine"></div>
         </div>
         <project-module
-          v-for="item in projects"
+          v-for="(item, i) in projects"
           :key="item.title"
           :title="item.title"
           :date="item.date"
@@ -20,6 +20,7 @@
           :github="item.github"
           :useSkills="item.useSkills"
           :note="item.note"
+          :delay="i * 120"
         />
       </div>
     </section>
@@ -27,7 +28,7 @@
 </template>
 
 <script setup>
-import projectModule from './projectModuel.vue'
+import projectModule from './projectModule.vue'
 import ssokThumbnail from '@/assets/img/ssok-thumbnail.jpg'
 import stockThumbnail from '@/assets/img/stock-thumbnail.jpg'
 import lisnThumbnail from '@/assets/img/lisn-thumbnail.jpg'
