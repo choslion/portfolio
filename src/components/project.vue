@@ -31,6 +31,7 @@ import projectModule from './projectModuel.vue'
 import ssokThumbnail from '@/assets/img/ssok-thumbnail.jpg'
 import stockThumbnail from '@/assets/img/stock-thumbnail.jpg'
 import lisnThumbnail from '@/assets/img/lisn-thumbnail.jpg'
+import calcThumbnail from '@/assets/img/calc-thumbnail.jpg'
 
 const projects = [
   {
@@ -45,7 +46,20 @@ const projects = [
     url: 'https://stock-pro-seven.vercel.app/',
     github: 'https://github.com/choslion/stock-pro',
     useSkills: 'React 19, Vite, Tailwind CSS, Recharts, Lightweight-charts, Framer Motion, Zustand, Axios / FastAPI, Python, yfinance, Claude API, Render',
-    note: '※ Render 배포 환경 특성상 최초 접속 시 약 30~60초의 로딩 시간이 발생할 수 있습니다.',
+    note: '※ Render 배포 환경 특성상 최초 접속 시 약 30~60초의 로딩 시간이 발생할 수 있습니다. 새로고침 필수',
+  },
+  {
+    title: '생활계산소',
+    date: '2026.06 ~ (개인 프로젝트)',
+    img: calcThumbnail,
+    color: '#fb923c',
+    introduce:
+      '돈, 식비, 집, 공간 등 일상 속 판단이 필요한 순간을 위한 유틸리티 도구 모음입니다. 기획부터 UI 설계, 구현까지 단독으로 진행했습니다.',
+    contribution: '100%',
+    mainFunc: '예산 관리, 구독료 계산기, 배달vs요리 비교, 냉장고 재료 레시피, 방 가구 시뮬레이터 (Three.js 3D), 쓰레기 분류 안내',
+    url: 'https://choslion.github.io/check-income-calc/#/',
+    github: 'https://github.com/choslion/check-income-calc',
+    useSkills: 'React 19, TypeScript, Vite, React Router, Tailwind CSS 4, Three.js, React Three Fiber',
   },
   {
     title: 'SSOK (쏙)',
