@@ -64,7 +64,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onUnmounted } from 'vue'
 
 defineProps({
   title: String,
@@ -85,9 +85,15 @@ defineProps({
 
 const wrapRef = ref(null)
 const MAX_TILT = 4
+const LERP = 0.18
 
 let raf = null
 let canTilt = null
+let currentRx = 0
+let currentRy = 0
+let targetRx = 0
+let targetRy = 0
+let active = false
 
 function tiltAllowed() {
   if (canTilt !== null) return canTilt
@@ -97,24 +103,53 @@ function tiltAllowed() {
   return canTilt
 }
 
+function animate() {
+  if (!wrapRef.value) { raf = null; return }
+  currentRx += (targetRx - currentRx) * LERP
+  currentRy += (targetRy - currentRy) * LERP
+
+  const settled =
+    Math.abs(targetRx - currentRx) < 0.04 &&
+    Math.abs(targetRy - currentRy) < 0.04
+
+  if (settled) {
+    currentRx = targetRx
+    currentRy = targetRy
+    if (!active) {
+      wrapRef.value.style.transform = ''
+      raf = null
+      return
+    }
+    wrapRef.value.style.transform = `perspective(1200px) rotateX(${currentRx.toFixed(2)}deg) rotateY(${currentRy.toFixed(2)}deg)`
+    raf = null
+    return
+  }
+
+  wrapRef.value.style.transform = `perspective(1200px) rotateX(${currentRx.toFixed(2)}deg) rotateY(${currentRy.toFixed(2)}deg)`
+  raf = requestAnimationFrame(animate)
+}
+
 function onMove(e) {
   if (!tiltAllowed() || !wrapRef.value) return
   const rect = wrapRef.value.getBoundingClientRect()
   const px = (e.clientX - rect.left) / rect.width
   const py = (e.clientY - rect.top) / rect.height
-  const ry = (px - 0.5) * MAX_TILT * 2
-  const rx = (0.5 - py) * MAX_TILT * 2
-  if (raf) cancelAnimationFrame(raf)
-  raf = requestAnimationFrame(() => {
-    wrapRef.value.style.transform = `perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`
-  })
+  targetRy = (px - 0.5) * MAX_TILT * 2
+  targetRx = (0.5 - py) * MAX_TILT * 2
+  active = true
+  if (!raf) raf = requestAnimationFrame(animate)
 }
 
 function onLeave() {
-  if (!wrapRef.value) return
-  if (raf) cancelAnimationFrame(raf)
-  wrapRef.value.style.transform = ''
+  active = false
+  targetRx = 0
+  targetRy = 0
+  if (!raf) raf = requestAnimationFrame(animate)
 }
+
+onUnmounted(() => {
+  if (raf) cancelAnimationFrame(raf)
+})
 </script>
 
 <style scoped></style>

@@ -15,14 +15,10 @@
   padding: 3rem;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.4s ease, box-shadow 0.35s ease, opacity 0.35s ease, outline-color 0.35s ease;
+  transition: box-shadow 0.35s ease, opacity 0.35s ease, outline-color 0.35s ease;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   outline: 2px solid transparent;
   outline-offset: -2px;
-
-  &:hover {
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-  }
 
   &--dimmed {
     opacity: 0.35;
@@ -31,6 +27,21 @@
   &--highlighted {
     outline-color: $accent;
     box-shadow: 0 16px 40px rgba($accent, 0.35);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-wrap:hover {
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    outline-color: rgba($accent, 0.35);
+
+    .project-info__imgs img {
+      transform: scale(1.025);
+    }
+  }
+
+  .project-wrap--highlighted:hover {
+    outline-color: $accent;
   }
 }
 
@@ -113,10 +124,15 @@
   &__imgs {
     width: 50%;
     margin-right: 3rem;
+    overflow: hidden;
+    border-radius: 10px;
 
     img {
       border-radius: 10px;
       width: 100%;
+      display: block;
+      transition: transform 0.4s ease;
+      will-change: transform;
     }
   }
 
