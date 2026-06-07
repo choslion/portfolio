@@ -43,7 +43,9 @@
   border: 1px solid rgba(#fff, 0.08);
   border-radius: 12px;
   padding: 1.25rem 0.75rem;
-  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 
   &:hover {
     background: rgba(#fff, 0.08);
@@ -51,10 +53,24 @@
     transform: translateY(-3px);
   }
 
+  &:focus-visible {
+    outline: 2px solid $accent;
+    outline-offset: 2px;
+  }
+
+  &--active {
+    background: rgba($accent, 0.12);
+    border-color: $accent;
+    box-shadow: 0 0 0 3px rgba($accent, 0.15);
+
+    span { color: $accent; }
+  }
+
   span {
     font-size: 0.72rem;
     color: rgba(#fff, 0.55);
     text-align: center;
+    transition: color 0.2s ease;
   }
 }
 

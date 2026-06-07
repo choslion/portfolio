@@ -6,6 +6,15 @@
           <h1 class="title">Project</h1>
           <div class="underLine"></div>
         </div>
+
+        <div v-if="isActive" class="project-filter">
+          <span class="project-filter__label">{{ activeSkill }}</span>
+          <span class="project-filter__desc">관련 프로젝트만 강조 중</span>
+          <button type="button" class="project-filter__clear" @click="clear" aria-label="필터 해제">
+            ×
+          </button>
+        </div>
+
         <project-module
           v-for="(item, i) in projects"
           :key="item.title"
@@ -21,6 +30,8 @@
           :useSkills="item.useSkills"
           :note="item.note"
           :delay="i * 120"
+          :dimmed="isActive && !matches(item.useSkills)"
+          :highlighted="isActive && matches(item.useSkills)"
         />
       </div>
     </section>
@@ -33,6 +44,9 @@ import ssokThumbnail from '@/assets/img/ssok-thumbnail.jpg'
 import stockThumbnail from '@/assets/img/stock-thumbnail.jpg'
 import lisnThumbnail from '@/assets/img/lisn-thumbnail.jpg'
 import calcThumbnail from '@/assets/img/calc-thumbnail.jpg'
+import { useSkillFilter } from '@/composables/useSkillFilter'
+
+const { activeSkill, isActive, clear, matches } = useSkillFilter()
 
 const projects = [
   {
