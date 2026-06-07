@@ -42,7 +42,7 @@ const projects = [
     introduce:
       'React 기반으로 제작한 투자 지표 대시보드입니다. VIX, FGI, S&P 500 등 주요 지표를 시각화하고, Claude API를 활용한 AI 마켓 브리핑 기능을 구현했습니다.',
     contribution: '100% (프론트엔드 · FastAPI 백엔드)',
-    mainFunc: 'AI 마켓 브리핑 (Claude API), VIX 변동성 차트, 공포탐욕지수(FGI), S&P 500 대시보드, 한국 주식 검색·순위, ETF 카테고리, 상품·환율 추적, 섹터별 현황, 자체 설계 종합 심리 점수',
+    mainFunc: 'AI 마켓 브리핑·챗봇 (Claude API), VIX 변동성 차트, 공포탐욕지수(FGI), S&P 500 대시보드, 한국 주식 검색·순위, ETF 카테고리, 상품·환율 추적, 섹터별 현황, 자체 설계 종합 심리 점수',
     url: 'https://stock-pro-seven.vercel.app/',
     github: 'https://github.com/choslion/stock-pro',
     useSkills: 'React 19, Vite, Tailwind CSS, Recharts, Lightweight-charts, Framer Motion, Zustand, Axios / FastAPI, Python, yfinance, Claude API, Render',
