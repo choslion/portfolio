@@ -1,17 +1,18 @@
 <template>
-  <!-- Desktop: pill nav centered at top -->
-  <div class="nav-desktop">
-    <nav class="nav-pill">
-      <button
-        v-for="item in items"
-        :key="item.id"
-        @click="goSection(item.id)"
-        :class="['nav-item', { 'nav-item--active': active === item.id }]"
-      >
-        {{ item.label }}
-      </button>
-    </nav>
-  </div>
+  <!-- Desktop: side rail dot nav (오른쪽 가장자리) -->
+  <nav class="nav-rail" aria-label="페이지 섹션 네비게이션">
+    <button
+      v-for="item in items"
+      :key="item.id"
+      @click="goSection(item.id)"
+      :class="['nav-rail__item', { 'nav-rail__item--active': active === item.id }]"
+      :aria-label="item.label"
+      :aria-current="active === item.id ? 'true' : undefined"
+    >
+      <span class="nav-rail__label">{{ item.label }}</span>
+      <span class="nav-rail__dot" aria-hidden="true"></span>
+    </button>
+  </nav>
 
   <!-- Mobile: floating button + slide-up overlay -->
   <div class="nav-mobile">
@@ -60,6 +61,12 @@ function goSection(id) {
 }
 
 function updateActive() {
+  const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 10
+  if (atBottom) {
+    active.value = items[items.length - 1].id
+    return
+  }
+
   const scrollY = window.scrollY + 120
   for (let i = items.length - 1; i >= 0; i--) {
     const el = document.getElementById(items[i].id)
