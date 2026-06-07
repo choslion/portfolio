@@ -69,6 +69,14 @@
   will-change: transform, opacity;
 }
 
+.section-intro {
+  .typewriter-wrap,
+  .button {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+}
+
 .button {
   appearance: none;
   background: transparent;

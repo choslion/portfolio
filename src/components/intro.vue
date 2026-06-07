@@ -14,8 +14,8 @@
             <span class="word">안녕하세요.</span>
           </span>
           <span class="word-line">
-            <span class="word point">서비스 운영</span><span class="word">과</span>
-            <span class="word point">화면 품질 개선</span><span class="word">을</span>
+            <span class="word"><span class="point">서비스 운영</span>과</span>
+            <span class="word"><span class="point">화면 품질 개선</span>을</span>
             <span class="word">고민하는</span>
           </span>
           <span class="word-line">
@@ -24,17 +24,17 @@
           </span>
         </h1>
 
-        <button type="button" class="button" @click="moreView">
-          View my work
-          <font-awesome-icon icon="fa-solid fa-right-long" aria-hidden="true" />
-        </button>
-
-        <div class="typewriter-wrap" data-aos="fade-up" data-aos-duration="700">
+        <div class="typewriter-wrap" ref="subtitleRef">
           <span class="typewriter-text">{{ displayed }}</span><span
             class="typewriter-cursor"
             :class="{ visible: cursorVisible }"
           >|</span>
         </div>
+
+        <button type="button" class="button" ref="ctaRef" @click="moreView">
+          View my work
+          <font-awesome-icon icon="fa-solid fa-right-long" aria-hidden="true" />
+        </button>
       </div>
     </section>
   </div>
@@ -45,6 +45,8 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import gsap from 'gsap'
 
 const introTextRef = ref(null)
+const subtitleRef = ref(null)
+const ctaRef = ref(null)
 
 const phrases = [
   '실제 서비스 운영 환경에서 화면 품질을 개선해왔습니다.',
@@ -83,20 +85,48 @@ function tick() {
 }
 
 onMounted(() => {
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  if (introTextRef.value) {
-    const words = introTextRef.value.querySelectorAll('.word')
-    if (reduced) {
-      gsap.set(words, { opacity: 1, y: 0 })
-    } else {
-      gsap.fromTo(words,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'power2.out', delay: 0.2 }
-      )
-    }
-  }
-  typeTimer = setTimeout(tick, 1000)
   cursorTimer = setInterval(() => { cursorVisible.value = !cursorVisible.value }, 530)
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const words = introTextRef.value?.querySelectorAll('.word') || []
+
+  if (reduced) {
+    gsap.set(words, { opacity: 1, y: 0 })
+    if (subtitleRef.value) gsap.set(subtitleRef.value, { opacity: 1, y: 0 })
+    if (ctaRef.value) gsap.set(ctaRef.value, { opacity: 1, y: 0 })
+    typeTimer = setTimeout(tick, 300)
+    return
+  }
+
+  const tl = gsap.timeline({
+    defaults: { ease: 'power2.out' },
+    onComplete: () => { typeTimer = setTimeout(tick, 100) },
+  })
+
+  tl.fromTo(
+    words,
+    { opacity: 0, y: 18 },
+    { opacity: 1, y: 0, duration: 0.5, stagger: 0.06 },
+    0.2,
+  )
+
+  if (subtitleRef.value) {
+    tl.fromTo(
+      subtitleRef.value,
+      { opacity: 0, y: 12 },
+      { opacity: 1, y: 0, duration: 0.5 },
+      '-=0.15',
+    )
+  }
+
+  if (ctaRef.value) {
+    tl.fromTo(
+      ctaRef.value,
+      { opacity: 0, y: 12 },
+      { opacity: 1, y: 0, duration: 0.4 },
+      '-=0.1',
+    )
+  }
 })
 
 onUnmounted(() => {
