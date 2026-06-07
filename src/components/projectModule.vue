@@ -1,10 +1,14 @@
 <template>
   <div>
     <div
+      ref="wrapRef"
       class="project-wrap"
+      :class="{ 'project-wrap--dimmed': dimmed, 'project-wrap--highlighted': highlighted }"
       data-aos="fade-up"
       data-aos-duration="700"
       :data-aos-delay="delay"
+      @mousemove="onMove"
+      @mouseleave="onLeave"
     >
       <div class="project-title">{{ title }}</div>
       <div class="project-date">{{ date }}</div>
@@ -60,6 +64,8 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
 defineProps({
   title: String,
   date: String,
@@ -73,7 +79,42 @@ defineProps({
   useSkills: String,
   note: String,
   delay: { type: Number, default: 0 },
+  dimmed: { type: Boolean, default: false },
+  highlighted: { type: Boolean, default: false },
 })
+
+const wrapRef = ref(null)
+const MAX_TILT = 4
+
+let raf = null
+let canTilt = null
+
+function tiltAllowed() {
+  if (canTilt !== null) return canTilt
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+  canTilt = !reduced && finePointer
+  return canTilt
+}
+
+function onMove(e) {
+  if (!tiltAllowed() || !wrapRef.value) return
+  const rect = wrapRef.value.getBoundingClientRect()
+  const px = (e.clientX - rect.left) / rect.width
+  const py = (e.clientY - rect.top) / rect.height
+  const ry = (px - 0.5) * MAX_TILT * 2
+  const rx = (0.5 - py) * MAX_TILT * 2
+  if (raf) cancelAnimationFrame(raf)
+  raf = requestAnimationFrame(() => {
+    wrapRef.value.style.transform = `perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`
+  })
+}
+
+function onLeave() {
+  if (!wrapRef.value) return
+  if (raf) cancelAnimationFrame(raf)
+  wrapRef.value.style.transform = ''
+}
 </script>
 
 <style scoped></style>

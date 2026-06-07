@@ -14,19 +14,82 @@
   margin: 0 auto 2rem;
   padding: 3rem;
   position: relative;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease, box-shadow 0.35s ease, opacity 0.35s ease, outline-color 0.35s ease;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 
   &:hover {
-    transform: translateY(-6px);
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  }
+
+  &--dimmed {
+    opacity: 0.35;
+  }
+
+  &--highlighted {
+    outline-color: $accent;
+    box-shadow: 0 16px 40px rgba($accent, 0.35);
   }
 }
 
-@media (hover: none) {
-  .project-wrap:hover {
-    transform: none;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+.project-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  margin: 0 auto 2rem;
+  background: rgba(#fff, 0.06);
+  border: 1px solid rgba($accent, 0.4);
+  border-radius: 9999px;
+  color: rgba(#fff, 0.85);
+  font-size: 0.875rem;
+
+  &__label {
+    color: $accent;
+    font-weight: 700;
+  }
+
+  &__desc {
+    color: rgba(#fff, 0.6);
+    font-size: 0.8rem;
+  }
+
+  &__clear {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(#fff, 0.1);
+    color: rgba(#fff, 0.85);
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background: rgba($accent, 0.3);
+      color: $accent;
+    }
+  }
+}
+
+.section-project .section-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > .project-filter {
+    align-self: center;
+  }
+
+  > .section-title,
+  .project-wrap {
+    align-self: stretch;
   }
 }
 
@@ -89,7 +152,36 @@
     left: -2rem;
   }
 
-  a { word-break: break-all; }
+  a {
+    word-break: break-all;
+    position: relative;
+    color: #1f8fa3;
+    transition: color 0.2s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      height: 1px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    &:hover {
+      color: #0d6e80;
+      &::after { transform: scaleX(1); }
+    }
+
+    &:focus-visible {
+      outline: 2px solid #0d6e80;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+  }
 }
 
 .project__main-func {
