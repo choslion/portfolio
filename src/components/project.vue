@@ -7,11 +7,11 @@
           <div class="underLine"></div>
         </div>
 
-        <div v-if="isActive" class="project-filter">
+        <div v-if="isActive" class="project-filter" role="status" aria-live="polite">
           <span class="project-filter__label">{{ activeSkill }}</span>
           <span class="project-filter__desc">관련 프로젝트만 강조 중</span>
-          <button type="button" class="project-filter__clear" @click="clear" aria-label="필터 해제">
-            ×
+          <button type="button" class="project-filter__clear" @click="clear">
+            전체 보기
           </button>
         </div>
 
