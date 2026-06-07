@@ -1,0 +1,68 @@
+@use 'variables' as *;
+@use 'sass:color';
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 10000;
+  background: rgba(#fff, 0.05);
+
+  &__bar {
+    height: 100%;
+    background: linear-gradient(to right, $accent, color.adjust($accent, $lightness: 15%));
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.1s linear;
+  }
+}
+
+.scroll-top {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba($dark-1, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(#fff, 0.12);
+  color: rgba(#fff, 0.85);
+  cursor: pointer;
+  z-index: 9997;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(#000, 0.4);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  font-size: 16px;
+
+  &:hover {
+    background: rgba($accent, 0.2);
+    color: $accent;
+    transform: translateY(-2px);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .scroll-top {
+    right: 32px;
+    bottom: 32px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.fade-up-enter-active,
+.fade-up-leave-active {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.fade-up-enter-from,
+.fade-up-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}

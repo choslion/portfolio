@@ -1,5 +1,6 @@
 <template>
   <div>
+    <scrollUI />
     <intro id="intro" />
     <navMenu />
     <about id="about" />
@@ -16,6 +17,7 @@ import about from './components/about.vue'
 import career from './components/career.vue'
 import project from './components/project.vue'
 import contact from './components/contact.vue'
+import scrollUI from './components/scrollUI.vue'
 import '@/assets/css/index.scss'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
