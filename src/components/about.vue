@@ -21,19 +21,14 @@
           >
             <h3 class="skill-group__label">{{ group.label }}</h3>
             <div class="skill-grid">
-              <button
+              <div
                 v-for="skill in group.skills"
                 :key="skill.label"
-                type="button"
                 class="skill-item"
-                :class="{ 'skill-item--active': activeSkill === skill.label }"
-                @click="onSkillClick(skill.label)"
-                :aria-pressed="activeSkill === skill.label"
-                :aria-label="`${skill.label} 관련 프로젝트 보기`"
               >
                 <img :src="iconDataUrl(skill)" :alt="skill.label" class="skill-icon" />
                 <span>{{ skill.label }}</span>
-              </button>
+              </div>
             </div>
           </div>
         </div>
@@ -49,16 +44,6 @@ import {
   siGithub,
   siFigma, siJira, siConfluence, siBitbucket,
 } from 'simple-icons'
-import { useSkillFilter } from '@/composables/useSkillFilter'
-
-const { activeSkill, toggle } = useSkillFilter()
-
-function onSkillClick(label) {
-  toggle(label)
-  if (activeSkill.value) {
-    document.getElementById('project')?.scrollIntoView({ behavior: 'smooth' })
-  }
-}
 
 const zeplinSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#FDBD39" d="M3 5h18v2.5L7.5 17H21v2H3v-2.5L16.5 7H3V5z"/></svg>`
 

@@ -14,100 +14,17 @@
   margin: 0 auto 2rem;
   padding: 3rem;
   position: relative;
-  transform-style: preserve-3d;
-  transition: box-shadow 0.35s ease, opacity 0.35s ease, outline-color 0.35s ease;
+  transition: box-shadow 0.35s ease;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-
-  &--dimmed {
-    opacity: 0.35;
-  }
-
-  &--highlighted {
-    outline-color: $accent;
-    box-shadow: 0 16px 40px rgba($accent, 0.35);
-  }
 }
 
 @media (hover: hover) and (pointer: fine) {
   .project-wrap:hover {
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-    outline-color: rgba($accent, 0.35);
 
     .project-info__imgs img {
       transform: scale(1.025);
     }
-  }
-
-  .project-wrap--highlighted:hover {
-    outline-color: $accent;
-  }
-}
-
-.project-filter {
-  display: inline-flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  padding: 0.5rem 0.5rem 0.5rem 1.25rem;
-  margin: 0 auto 2rem;
-  background: rgba(#fff, 0.06);
-  border: 1px solid rgba($accent, 0.4);
-  border-radius: 9999px;
-  color: rgba(#fff, 0.85);
-  font-size: 0.875rem;
-
-  &__label {
-    color: $accent;
-    font-weight: 700;
-  }
-
-  &__desc {
-    color: rgba(#fff, 0.6);
-    font-size: 0.8rem;
-  }
-
-  &__clear {
-    min-height: 36px;
-    padding: 8px 16px;
-    border-radius: 9999px;
-    border: 1px solid rgba(#fff, 0.18);
-    background: rgba(#fff, 0.06);
-    color: rgba(#fff, 0.9);
-    cursor: pointer;
-    font-size: 0.8rem;
-    font-family: 'Noto Sans KR', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-
-    &:hover {
-      background: rgba($accent, 0.15);
-      border-color: rgba($accent, 0.5);
-      color: $accent;
-    }
-
-    &:focus-visible {
-      outline: 2px solid $accent;
-      outline-offset: 2px;
-    }
-  }
-}
-
-.section-project .section-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  > .project-filter {
-    align-self: center;
-  }
-
-  > .section-title,
-  .project-wrap {
-    align-self: stretch;
   }
 }
 
