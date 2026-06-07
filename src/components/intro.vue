@@ -3,6 +3,7 @@
     <section class="section-intro">
       <div class="intro-deco intro-deco--1"></div>
       <div class="intro-deco intro-deco--2"></div>
+      <intro-fx />
 
       <div class="intro-inner">
         <div class="logo">
@@ -43,6 +44,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import gsap from 'gsap'
+import introFx from './introFx.vue'
 
 const introTextRef = ref(null)
 const subtitleRef = ref(null)

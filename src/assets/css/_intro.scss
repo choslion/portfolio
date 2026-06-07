@@ -12,6 +12,33 @@
   background: linear-gradient(135deg, $dark-1, $dark-2 60%, #0a1a20);
 }
 
+// 마우스 인터랙티브 FX (spotlight + dot grid)
+.intro-fx {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+
+  &__spotlight {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      460px circle at var(--fx-x, 50%) var(--fx-y, 50%),
+      rgba($accent, 0.13),
+      transparent 60%
+    );
+    transition: opacity 0.35s ease;
+    mix-blend-mode: screen;
+  }
+
+  &__dots {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 // 배경 데코
 .intro-deco {
   position: absolute;
