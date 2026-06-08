@@ -12,24 +12,12 @@
   background: linear-gradient(135deg, $dark-1, $dark-2 60%, #0a1a20);
 }
 
-// 마우스 인터랙티브 FX (drifting blobs + spotlight)
+// 흐르는 그라데이션 블롭 (aurora)
 .intro-fx {
   position: absolute;
   inset: 0;
   pointer-events: none;
   overflow: hidden;
-
-  &__spotlight {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-      480px circle at var(--fx-x, 50%) var(--fx-y, 50%),
-      rgba($accent, 0.16),
-      transparent 60%
-    );
-    transition: opacity 0.4s ease;
-    mix-blend-mode: screen;
-  }
 
   &__blob {
     position: absolute;
@@ -83,6 +71,16 @@
   to   { transform: translate(10vmin, -10vmin) scale(1.15); }
 }
 
+// Three.js 떠다니는 오브젝트 (인트로 섹션 전체)
+.intro-object {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
 .intro-inner {
   display: flex;
   flex-direction: column;
@@ -132,7 +130,13 @@
   border: 2px solid #fff;
   padding: 14px 32px;
   cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &__inner {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   svg, .svg-inline--fa {
     margin-left: 0.5rem;
@@ -142,13 +146,11 @@
   &:hover {
     background-color: $accent;
     border-color: $accent;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba($accent, 0.25);
+    box-shadow: 0 8px 24px rgba($accent, 0.3);
 
     svg, .svg-inline--fa { transform: translateX(4px); }
   }
 
-  &:active { transform: translateY(0); }
   &:focus-visible {
     outline: 2px solid $accent;
     outline-offset: 4px;

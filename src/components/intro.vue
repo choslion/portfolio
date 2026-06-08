@@ -2,6 +2,7 @@
   <div>
     <section class="section-intro">
       <intro-fx />
+      <intro-object />
 
       <div class="intro-inner">
         <div class="logo">
@@ -30,9 +31,18 @@
           >|</span>
         </div>
 
-        <button type="button" class="button" ref="ctaRef" @click="moreView">
-          View my work
-          <font-awesome-icon icon="fa-solid fa-right-long" aria-hidden="true" />
+        <button
+          type="button"
+          class="button"
+          ref="ctaRef"
+          @click="moreView"
+          @mousemove="onCtaMove"
+          @mouseleave="onCtaLeave"
+        >
+          <span class="button__inner" ref="ctaInnerRef">
+            View my work
+            <font-awesome-icon icon="fa-solid fa-right-long" aria-hidden="true" />
+          </span>
         </button>
       </div>
     </section>
@@ -40,13 +50,32 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, defineAsyncComponent } from 'vue'
 import gsap from 'gsap'
 import introFx from './introFx.vue'
+
+const introObject = defineAsyncComponent(() => import('./introObject.vue'))
 
 const introTextRef = ref(null)
 const subtitleRef = ref(null)
 const ctaRef = ref(null)
+const ctaInnerRef = ref(null)
+
+let magneticAllowed = false
+
+function onCtaMove(e) {
+  if (!magneticAllowed || !ctaRef.value || !ctaInnerRef.value) return
+  const rect = ctaRef.value.getBoundingClientRect()
+  const mx = e.clientX - rect.left - rect.width / 2
+  const my = e.clientY - rect.top - rect.height / 2
+  gsap.to(ctaRef.value, { x: mx * 0.25, y: my * 0.35, duration: 0.4, ease: 'power3.out' })
+  gsap.to(ctaInnerRef.value, { x: mx * 0.12, y: my * 0.18, duration: 0.4, ease: 'power3.out' })
+}
+
+function onCtaLeave() {
+  if (!ctaRef.value || !ctaInnerRef.value) return
+  gsap.to([ctaRef.value, ctaInnerRef.value], { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.4)' })
+}
 
 const phrases = [
   '실제 서비스 운영 환경에서 화면 품질을 개선해왔습니다.',
@@ -88,6 +117,8 @@ onMounted(() => {
   cursorTimer = setInterval(() => { cursorVisible.value = !cursorVisible.value }, 530)
 
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+  magneticAllowed = !reduced && fine
   const words = introTextRef.value?.querySelectorAll('.word') || []
 
   if (reduced) {
