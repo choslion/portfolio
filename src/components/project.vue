@@ -3,7 +3,7 @@
     <section class="section-project" id="project">
       <div class="section-wrap">
         <div class="section-title">
-          <h1 class="title">Project</h1>
+          <h2 class="title">Project</h2>
           <div class="underLine"></div>
         </div>
 

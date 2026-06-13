@@ -2,7 +2,7 @@
   <div class="section-contact">
     <div class="section-wrap">
       <div class="section-title">
-        <h1 id="contact" class="title">Contact</h1>
+        <h2 id="contact" class="title">Contact</h2>
         <div class="underLine"></div>
       </div>
       <div class="contact-box flex-set font24">
