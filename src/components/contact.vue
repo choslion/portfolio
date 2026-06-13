@@ -7,7 +7,7 @@
       </div>
       <div class="contact-box flex-set font24">
         <span class="logo"><img src="@/assets/img/logo-white.png" alt="로고" /></span>
-        <h4>
+        <p class="contact-email">
           Email :
           <button
             type="button"
@@ -22,7 +22,7 @@
               class="email-copy__icon"
             />
           </button>
-        </h4>
+        </p>
         <div class="sns-box">
           <a target="_blank" rel="noopener noreferrer" href="https://github.com/choslion?tab=repositories" aria-label="GitHub 저장소 방문 (새 탭)">
             <font-awesome-icon class="icons" icon="fa-brands fa-github" size="3x" aria-hidden="true" />

@@ -27,6 +27,21 @@
 | 아이콘 | FontAwesome, simple-icons |
 | 배포 | GitHub Actions → GitHub Pages |
 
+## 성능 (Lighthouse)
+
+로컬 프로덕션 빌드(`npm run build` → `npm run preview`) 기준 측정값입니다.
+
+| 카테고리 | 데스크탑 | 모바일 |
+|----------------|:----:|:----:|
+| Performance    |  75  |  53  |
+| Accessibility  | 100  | 100  |
+| Best Practices | 100  | 100  |
+| SEO            | 100  | 100  |
+
+- **접근성·베스트프랙티스·SEO 전 항목 100점** — 시맨틱 헤딩 구조, 메타태그·OG, 이미지 종횡비, 색상 대비, `prefers-reduced-motion` 대응
+- 인터랙티브 3D 인트로(Three.js)는 `defineAsyncComponent` + idle 시점 마운트로 **첫 페인트 이후 지연 로드**, 웹폰트는 **비차단 로드**해 초기 렌더 부담을 줄였습니다
+- 모바일 Performance는 클라이언트 렌더 SPA + 3D 인트로 특성상 데스크탑보다 낮으며, CLS는 0.003으로 레이아웃 시프트는 거의 없습니다
+
 ## 프로젝트 구조
 
 ```

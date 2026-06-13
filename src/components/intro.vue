@@ -2,7 +2,7 @@
   <div>
     <section class="section-intro">
       <intro-fx />
-      <intro-object />
+      <intro-object v-if="showObject" />
 
       <div class="intro-inner">
         <div class="logo">
@@ -61,6 +61,9 @@ const subtitleRef = ref(null)
 const ctaRef = ref(null)
 const ctaInnerRef = ref(null)
 
+// Three.js 박스는 첫 페인트 이후 idle에 마운트 (초기 로딩 부담 완화)
+const showObject = ref(false)
+
 let magneticAllowed = false
 
 function onCtaMove(e) {
@@ -115,6 +118,14 @@ function tick() {
 
 onMounted(() => {
   cursorTimer = setInterval(() => { cursorVisible.value = !cursorVisible.value }, 530)
+
+  // 첫 페인트 이후 한가할 때 Three.js 박스 마운트
+  const mountObject = () => { showObject.value = true }
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(mountObject, { timeout: 2000 })
+  } else {
+    setTimeout(mountObject, 600)
+  }
 
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches
