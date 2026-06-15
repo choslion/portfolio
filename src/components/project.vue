@@ -51,6 +51,18 @@ const projects = [
     note: '※ 최초 접속 시 Render 서버가 활성화되면서 약 45~60초 정도 로딩될 수 있습니다. 화면이 멈춰 보일 경우 새로고침 후 다시 확인해 주세요',
   },
   {
+    title: 'SS — 개인 AI 비서 (Chief of Staff)',
+    date: '2026.06 ~ (개인 프로젝트)',
+    color: '#38bdf8',
+    introduce:
+      'Claude Code(Claude Agent SDK) 위에 만든 개인 "Chief of Staff" 에이전트입니다. 매번 맥락을 잃는 챗봇과 달리, 파일 기반 기억(state·sessions)으로 세션을 넘어 이어지고, 목표·할 일을 추적하며, 직접 만든 주식 대시보드(Stock Pro)·구글 캘린더에 통합해 매일 브리핑합니다.',
+    contribution: '100% (에이전트 설계 · 도구 통합)',
+    mainFunc: '파일 기반 세션 연속성, 관심종목 시황 브리핑(Stock Pro 백엔드 연동), 평일 정기 리마인드(클라우드 스케줄 루틴), 사용 통계로 연속 사용일 추적, Google Calendar·Notion 연동(MCP)',
+    url: '',
+    github: 'https://github.com/choslion/agent-ss-showcase',
+    useSkills: 'Claude Agent SDK, Python, MCP (Google Calendar · Notion), GitHub Actions / Routines, Markdown 기반 메모리',
+  },
+  {
     title: '생활계산소',
     date: '2026.06 ~ (개인 프로젝트)',
     img: calcThumbnail,
