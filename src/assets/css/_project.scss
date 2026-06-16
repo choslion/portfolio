@@ -70,6 +70,21 @@
 
     &--full { width: 100%; }
   }
+
+  // 영상 카드: 미디어를 카드 전체 폭으로 위에 두고 설명을 아래로 (세로 스택)
+  &--media-top {
+    flex-direction: column;
+    align-items: stretch;
+
+    .project-info__imgs {
+      width: 100%;
+      margin: 0 0 2rem;
+    }
+
+    .project-info__contents {
+      width: 100%;
+    }
+  }
 }
 
 .project-note {

@@ -8,7 +8,7 @@
     >
       <div class="project-title">{{ title }}</div>
       <div class="project-date">{{ date }}</div>
-      <div class="project-info">
+      <div class="project-info" :class="{ 'project-info--media-top': video }">
         <div v-if="img || video" class="project-info__imgs">
           <video
             v-if="video"
