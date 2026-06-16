@@ -53,7 +53,7 @@ const projects = [
     note: '※ 최초 접속 시 Render 서버가 활성화되면서 약 45~60초 정도 로딩될 수 있습니다. 화면이 멈춰 보일 경우 새로고침 후 다시 확인해 주세요',
   },
   {
-    title: 'SS — 개인 AI 비서 (Chief of Staff)',
+    title: 'SS - 개인 AI 비서',
     date: '2026.06 ~ (개인 프로젝트)',
     video: ssDemo,
     color: '#38bdf8',
