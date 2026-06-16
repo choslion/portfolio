@@ -8,7 +8,7 @@
     >
       <div class="project-title">{{ title }}</div>
       <div class="project-date">{{ date }}</div>
-      <div class="project-info" :class="{ 'project-info--media-top': video }">
+      <div class="project-info">
         <div v-if="img || video" class="project-info__imgs">
           <video
             v-if="video"
@@ -21,10 +21,7 @@
           ></video>
           <img v-else :src="img" alt="프로젝트 메인" />
         </div>
-        <div
-          class="project-info__contents"
-          :class="{ 'project-info__contents--full': !img && !video }"
-        >
+        <div class="project-info__contents">
           <div>{{ introduce }}</div>
           <p v-if="note" class="project-note">{{ note }}</p>
           <hr />

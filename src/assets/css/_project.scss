@@ -42,13 +42,15 @@
   text-align: center;
 }
 
+// 모든 프로젝트 카드: 미디어(이미지·영상)를 위에, 설명을 아래에 두는 세로 스택
 .project-info {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: stretch;
 
   &__imgs {
-    width: 50%;
-    margin-right: 3rem;
+    width: 100%;
+    margin: 0 0 2rem;
     overflow: hidden;
     border-radius: 10px;
 
@@ -63,27 +65,10 @@
   }
 
   &__contents {
-    width: 45%;
+    width: 100%;
     line-height: 20pt;
 
     p { margin-top: 1rem; }
-
-    &--full { width: 100%; }
-  }
-
-  // 영상 카드: 미디어를 카드 전체 폭으로 위에 두고 설명을 아래로 (세로 스택)
-  &--media-top {
-    flex-direction: column;
-    align-items: stretch;
-
-    .project-info__imgs {
-      width: 100%;
-      margin: 0 0 2rem;
-    }
-
-    .project-info__contents {
-      width: 100%;
-    }
   }
 }
 
