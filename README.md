@@ -1,21 +1,30 @@
 # 조승혁 포트폴리오
 
-서비스 운영과 화면 품질 개선을 고민하는 웹 퍼블리셔 조승혁의 개인 포트폴리오 사이트입니다.
+화면 완성도와 접근성, 반응형 구현을 중심으로 정리한 웹 퍼블리셔 조승혁의 개인 포트폴리오 사이트입니다.
 
 🔗 **[choslion.github.io/portfolio](https://choslion.github.io/portfolio/)**
+
+![Vue](https://img.shields.io/badge/Vue-3-4FC08D?logo=vuedotjs&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)
+![SCSS](https://img.shields.io/badge/SCSS-CC6699?logo=sass&logoColor=white)
+![GSAP](https://img.shields.io/badge/GSAP-ScrollTrigger-88CE02?logo=greensock&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-000000?logo=threedotjs&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-deployed-222222?logo=github&logoColor=white)
 
 ---
 
 ## 소개
 
-금융권 디지털채널 3년 운영, 웹 접근성 개선, GitHub Actions 기반 자동 배포 구축 경험을 한 페이지에 담은 싱글 페이지 포트폴리오입니다. Intro · About · Career · Project · Contact 섹션으로 구성됩니다.
+삼성카드 디지털채널을 3년간 운영하며 쌓은 화면 품질·접근성 개선 경험을 한 페이지에 담았습니다. Vue 3와 Vite로 만든 싱글 페이지로, Intro · About · Career · Project · Contact 섹션으로 이어집니다.
 
-주요 특징
+시각적인 인터랙션을 더하는 데 그치지 않고, 사용자가 내용을 자연스럽게 따라 읽도록 흐름을 짜고 디바이스별 사용성까지 함께 고려했습니다.
 
-- **스크롤 인터랙션**: GSAP ScrollTrigger 기반 Career 섹션 스티키 스크롤, 단계별 카운트업
-- **인트로 인터랙션**: Three.js 기반 와이어프레임 박스 물리 시뮬레이션(중력·충돌·마우스/터치 타격), aurora 그라데이션 배경
-- **접근성·모션 배려**: `prefers-reduced-motion` 대응, 터치/마우스 매체쿼리 분기, 시맨틱 헤딩 구조
-- **반응형**: 데스크탑/태블릿/모바일 브레이크포인트별 레이아웃·인터랙션 조정
+## 주요 구현
+
+- **스크롤 인터랙션** — GSAP ScrollTrigger로 Career 섹션의 스티키 스크롤과 단계별 카운트업을 구현했습니다.
+- **인트로 비주얼** — Three.js 와이어프레임 박스에 중력·충돌·마우스 타격을 반영한 물리 시뮬레이션과 aurora 그라데이션 배경으로 첫 화면 인상을 잡았습니다.
+- **접근성·모션 배려** — 시맨틱 헤딩 구조와 색상 대비를 지키고, `prefers-reduced-motion`에 대응해 모션에 민감한 사용자도 무리 없이 볼 수 있게 했습니다.
+- **반응형** — 데스크탑·태블릿·모바일 브레이크포인트마다 레이아웃과 인터랙션 방식을 조정했습니다.
 
 ## 기술 스택
 
@@ -38,9 +47,7 @@
 | Best Practices | 100  | 100  |
 | SEO            | 100  | 100  |
 
-- **접근성·베스트프랙티스·SEO 전 항목 100점** — 시맨틱 헤딩 구조, 메타태그·OG, 이미지 종횡비, 색상 대비, `prefers-reduced-motion` 대응
-- 인터랙티브 3D 인트로(Three.js)는 `defineAsyncComponent` + idle 시점 마운트로 **첫 페인트 이후 지연 로드**, 웹폰트는 **비차단 로드**해 초기 렌더 부담을 줄였습니다
-- 모바일 Performance는 클라이언트 렌더 SPA + 3D 인트로 특성상 데스크탑보다 낮으며, CLS는 0.003으로 레이아웃 시프트는 거의 없습니다
+접근성·베스트프랙티스·SEO는 전 항목 100점입니다. 3D 인트로(Three.js)는 `defineAsyncComponent`로 첫 페인트 이후 idle 시점에 마운트하고 웹폰트도 비차단으로 로드해 초기 렌더 부담을 줄였습니다. 모바일 Performance는 클라이언트 렌더 SPA와 3D 인트로 특성상 데스크탑보다 낮지만, CLS는 0.003으로 레이아웃 시프트는 거의 없습니다.
 
 ## 프로젝트 구조
 
@@ -61,14 +68,14 @@ portfolio/
 │  │  ├─ about.vue         # 스킬 그룹
 │  │  ├─ career.vue        # 경력 스티키 스크롤 카드
 │  │  ├─ project.vue       # 프로젝트 목록
-│  │  ├─ projectModule.vue # 프로젝트 카드
+│  │  ├─ projectModule.vue # 프로젝트 카드 (이미지·영상 썸네일 지원)
 │  │  ├─ contact.vue       # 이메일 복사·SNS
 │  │  └─ scrollUI.vue      # 스크롤 진행바 + 맨 위로 버튼
 │  └─ assets/css/          # SCSS 모듈 (_intro, _about, _career …)
 └─ .github/workflows/deploy.yml  # 빌드 → Pages 배포
 ```
 
-## 실행
+## 시작하기 (Getting Started)
 
 ```bash
 npm install      # 의존성 설치
