@@ -9,10 +9,22 @@
       <div class="project-title">{{ title }}</div>
       <div class="project-date">{{ date }}</div>
       <div class="project-info">
-        <div v-if="img" class="project-info__imgs">
-          <img :src="img" alt="프로젝트 메인" />
+        <div v-if="img || video" class="project-info__imgs">
+          <video
+            v-if="video"
+            :src="video"
+            autoplay
+            loop
+            muted
+            playsinline
+            aria-label="프로젝트 데모 영상"
+          ></video>
+          <img v-else :src="img" alt="프로젝트 메인" />
         </div>
-        <div class="project-info__contents" :class="{ 'project-info__contents--full': !img }">
+        <div
+          class="project-info__contents"
+          :class="{ 'project-info__contents--full': !img && !video }"
+        >
           <div>{{ introduce }}</div>
           <p v-if="note" class="project-note">{{ note }}</p>
           <hr />
@@ -64,6 +76,7 @@ defineProps({
   title: String,
   date: String,
   img: String,
+  video: String,
   color: String,
   introduce: String,
   contribution: String,

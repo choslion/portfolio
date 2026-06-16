@@ -22,7 +22,8 @@
   .project-wrap:hover {
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 
-    .project-info__imgs img {
+    .project-info__imgs img,
+    .project-info__imgs video {
       transform: scale(1.025);
     }
   }
@@ -51,7 +52,8 @@
     overflow: hidden;
     border-radius: 10px;
 
-    img {
+    img,
+    video {
       border-radius: 10px;
       width: 100%;
       display: block;

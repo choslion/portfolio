@@ -13,6 +13,7 @@
           :title="item.title"
           :date="item.date"
           :img="item.img"
+          :video="item.video"
           :color="item.color"
           :introduce="item.introduce"
           :contribution="item.contribution"
@@ -34,6 +35,7 @@ import ssokThumbnail from '@/assets/img/ssok-thumbnail.jpg'
 import stockThumbnail from '@/assets/img/stock-thumbnail.jpg'
 import lisnThumbnail from '@/assets/img/lisn-thumbnail.jpg'
 import calcThumbnail from '@/assets/img/calc-thumbnail.jpg'
+import ssDemo from '@/assets/video/ss-demo.mp4'
 
 const projects = [
   {
@@ -53,6 +55,7 @@ const projects = [
   {
     title: 'SS — 개인 AI 비서 (Chief of Staff)',
     date: '2026.06 ~ (개인 프로젝트)',
+    video: ssDemo,
     color: '#38bdf8',
     introduce:
       'Claude Code(Claude Agent SDK) 위에 만든 개인 "Chief of Staff" 에이전트입니다. 매번 맥락을 잃는 챗봇과 달리, 파일 기반 기억(state·sessions)으로 세션을 넘어 이어지고, 목표·할 일을 추적하며, 직접 만든 주식 대시보드(Stock Pro)·구글 캘린더에 통합해 매일 브리핑합니다.',
