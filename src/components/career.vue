@@ -58,7 +58,7 @@
 
             <div class="career-card">
               <h3 class="career-card__title">신규 화면 구축</h3>
-              <p class="career-card__desc">대출이동 시스템 50+ 화면, THE TWENTY 라운지 30+ 화면 등 주요 프로젝트만 80+ 화면. 모든 주요 구축에서 <strong>WCMS 데이터 연동을 고려한 Vue 컴포넌트 구조</strong>로 제작했으며, 공통 컴포넌트 반영 시 CSS 인터랙션도 적용했습니다.</p>
+              <p class="career-card__desc">대출이동 시스템 50+ 화면, THE TWENTY 라운지 50+ 화면 등 주요 프로젝트만 100+ 화면. 모든 주요 구축에서 <strong>WCMS 데이터 연동을 고려한 Vue 컴포넌트 구조</strong>로 제작했으며, 공통 컴포넌트 반영 시 CSS 인터랙션도 적용했습니다.</p>
               <div class="career-tags">
                 <span class="tag">Vue</span>
                 <span class="tag">HTML</span>
