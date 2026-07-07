@@ -118,7 +118,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const stats = [
   { num: 500, suffix: '+', label: '운영·개선 이슈' },
-  { num: 80,  suffix: '+', label: '신규·개편 화면' },
+  { num: 100, suffix: '+', label: '신규·개편 화면' },
   { num: 600, suffix: 'p', label: '접근성 검토' },
   { num: 2,   suffix: '년', label: '홈페이지 운영' },
 ]
