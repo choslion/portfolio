@@ -29,6 +29,18 @@
           <!-- 오른쪽 스크롤 카드들 -->
           <div class="career-cards">
             <div class="career-card">
+              <h3 class="career-card__title">결제 서비스 화면 마이그레이션</h3>
+              <p class="career-card__desc">앱카드결제·온라인결제 화면 약 60개(팝업 포함)를 <strong>모니모 앱 디자인 가이드 기준으로 마이그레이션</strong>하고, 일부 화면을 신규 구축했습니다. 결제 단계별 화면 구조·노출 조건과 개발계·운영계 반영 후 스타일 상태를 검증하고, 기획·개발·QA와 검수 의견을 조율했습니다.</p>
+              <div class="career-tags">
+                <span class="tag">Vue</span>
+                <span class="tag">HTML</span>
+                <span class="tag">SCSS</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+
+            <div class="career-card">
               <h3 class="career-card__title">삼성카드 디지털채널 운영</h3>
               <p class="career-card__desc">삼성카드 디지털채널의 운영·개선 이슈를 JIRA 기반으로 관리하며 500건 이상 처리. 기획자·디자이너와 협업하며 기획 반영, 긴급 수정, JavaScript·jQuery 기반 동적 UI 구현, SCSS 트랜지션 적용 등 디지털채널 전반의 퍼블리싱 업무를 담당했습니다.</p>
               <div class="career-tags">
@@ -47,7 +59,7 @@
 
             <div class="career-card">
               <h3 class="career-card__title">신규 화면 구축</h3>
-              <p class="career-card__desc">대출이동 시스템 50+ 화면, THE TWENTY 라운지 30+ 화면, 로이어스 라운지 등 주요 프로젝트만 80+ 화면. 모든 주요 구축에서 <strong>WCMS 데이터 연동을 고려한 Vue 컴포넌트 구조</strong>로 제작했으며, 네비톡 공통 컴포넌트 반영 시 CSS 인터랙션도 적용했습니다.</p>
+              <p class="career-card__desc">대출이동 시스템 50+ 화면, THE TWENTY 라운지 30+ 화면 등 주요 프로젝트만 80+ 화면. 모든 주요 구축에서 <strong>WCMS 데이터 연동을 고려한 Vue 컴포넌트 구조</strong>로 제작했으며, 공통 컴포넌트 반영 시 CSS 인터랙션도 적용했습니다.</p>
               <div class="career-tags">
                 <span class="tag">Vue</span>
                 <span class="tag">HTML</span>

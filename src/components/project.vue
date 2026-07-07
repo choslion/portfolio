@@ -44,13 +44,12 @@ const projects = [
     img: stockThumbnail,
     color: '#22c55e',
     introduce:
-      'React 기반으로 제작한 투자 지표 대시보드입니다. VIX, FGI, S&P 500 등 주요 지표를 시각화하고, Claude API를 활용해 AI 마켓 브리핑과 종목을 질문하면 답해주는 AI 주식 어시스턴트(챗봇)를 구현했습니다.',
+      'React 기반으로 제작한 투자 지표 대시보드입니다. VIX, FGI, S&P 500 등 주요 지표를 시각화하고, Claude API를 활용해 AI 마켓 브리핑과 종목을 질문하면 답해주는 AI 주식 어시스턴트(챗봇)를 구현했습니다. 종목 시세는 일괄 요청과 SWR 캐시·사전 워밍을 적용해 로딩 지연 없이 응답하도록 최적화했습니다.',
     contribution: '100% (프론트엔드 · FastAPI 백엔드)',
-    mainFunc: 'AI 주식 어시스턴트(챗봇), AI 마켓 브리핑 (Claude API), VIX 변동성 차트, 공포탐욕지수(FGI), S&P 500 대시보드, 한국 주식 검색·순위, ETF 카테고리, 상품·환율 추적, 섹터별 현황, 자체 설계 종합 심리 점수',
+    mainFunc: 'AI 주식 어시스턴트(챗봇), AI 마켓 브리핑 (Claude API), VIX 변동성 차트, 공포탐욕지수(FGI), S&P 500 대시보드, 한국 주식 검색·순위, ETF 카테고리, 상품·환율 추적, 섹터별 현황, 자체 설계 종합 심리 점수, 개인 관심종목(로컬 저장), 증시 뉴스 탭',
     url: 'https://stock-pro-seven.vercel.app/',
     github: 'https://github.com/choslion/stock-pro',
     useSkills: 'React 19, Vite, Tailwind CSS, Recharts, Lightweight-charts, Framer Motion, Zustand, Axios / FastAPI, Python, yfinance, Claude API, Render',
-    note: '※ 최초 접속 시 Render 서버가 활성화되면서 약 45~60초 정도 로딩될 수 있습니다. 화면이 멈춰 보일 경우 새로고침 후 다시 확인해 주세요',
   },
   {
     title: 'SS - 개인 AI 비서',
