@@ -16,7 +16,6 @@ let resizeObserver = null
 let intersectionObserver = null
 let inView = true
 
-let allowInteract = false
 let sectionEl = null
 
 let boxes = []
@@ -33,14 +32,13 @@ const REST_THRESHOLD = 0.006
 const MAX_SPEED = 0.16
 const STRIKE_FACTOR = 0.24     // 마우스 타격 전달력
 const STRIKE_PAD = 0.28         // 박스 주변 타격 여유
+const TAP_BURST_RADIUS = 1.5    // 탭 충격파 반경
+const TAP_BURST_FORCE = 0.1     // 탭 충격파 세기
 
 const dpr = typeof window !== 'undefined' ? Math.min(window.devicePixelRatio || 1, 2) : 1
 
 function check() {
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches
-  allowInteract = !reduced && fine
-  return reduced
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches
 }
 
 function computeView() {
@@ -298,13 +296,44 @@ function pointerStrike(clientX, clientY) {
 }
 
 function onMove(e) {
+  // 실제 입력 장치로 판별 (미디어쿼리는 터치 겸용 PC에서 오탐 — 마우스만 통과, 터치는 touchmove가 담당)
+  if (e.pointerType !== 'mouse') return
   pointerStrike(e.clientX, e.clientY)
+}
+
+// 탭 지점에서 방사형 충격파 — 주변 박스가 사방으로 튕겨나감 (모바일 전용)
+function tapBurst(clientX, clientY) {
+  if (!sectionEl) return
+  const rect = sectionEl.getBoundingClientRect()
+  const nx = ((clientX - rect.left) / rect.width) * 2 - 1
+  const ny = -(((clientY - rect.top) / rect.height) * 2 - 1)
+  const mx = nx * (visW / 2)
+  const my = ny * (visH / 2)
+
+  for (const b of boxes) {
+    const dx = b.x - mx
+    const dy = b.y - my
+    const dist = Math.hypot(dx, dy)
+    if (dist < TAP_BURST_RADIUS) {
+      const falloff = 1 - dist / TAP_BURST_RADIUS   // 가까울수록 강하게
+      const ux = dist > 0.0001 ? dx / dist : (Math.random() - 0.5) * 2
+      const uy = dist > 0.0001 ? dy / dist : 1
+      b.vx += ux * TAP_BURST_FORCE * falloff
+      b.vy += uy * TAP_BURST_FORCE * falloff + 0.02 * falloff  // 살짝 위로 뜨는 맛
+      // 튕겨나가는 방향 따라 텀블
+      b.va.x += uy * falloff * 0.08
+      b.va.y += ux * falloff * 0.08
+      b.va.z += (Math.random() - 0.5) * 0.1 * falloff
+      clampSpeed(b)
+    }
+  }
 }
 
 function onTouchStart(e) {
   const t = e.touches && e.touches[0]
   if (!t) return
-  // 손가락 시작점 기준으로 델타 계산하도록 초기화
+  // 탭 지점 충격파 + 손가락 시작점 기준 스와이프 델타 초기화
+  tapBurst(t.clientX, t.clientY)
   prevMouse.valid = false
   pointerStrike(t.clientX, t.clientY)
 }
@@ -337,11 +366,9 @@ onMounted(() => {
 
   sectionEl = hostRef.value?.closest('.section-intro')
   if (sectionEl) {
-    // 데스크탑: 마우스 이동으로 타격
-    if (allowInteract) {
-      sectionEl.addEventListener('mousemove', onMove, { passive: true })
-      sectionEl.addEventListener('mouseleave', onLeave)
-    }
+    // 데스크탑: 마우스 이동으로 타격 (미디어쿼리 대신 pointerType으로 기기 판별)
+    sectionEl.addEventListener('pointermove', onMove, { passive: true })
+    sectionEl.addEventListener('pointerleave', onLeave)
     // 터치 디바이스: 스와이프로 타격 (스크롤은 그대로)
     const touchCapable = window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window
     if (touchCapable) {
@@ -369,8 +396,8 @@ onUnmounted(() => {
   resizeObserver?.disconnect()
   intersectionObserver?.disconnect()
   if (sectionEl) {
-    sectionEl.removeEventListener('mousemove', onMove)
-    sectionEl.removeEventListener('mouseleave', onLeave)
+    sectionEl.removeEventListener('pointermove', onMove)
+    sectionEl.removeEventListener('pointerleave', onLeave)
     sectionEl.removeEventListener('touchstart', onTouchStart)
     sectionEl.removeEventListener('touchmove', onTouchMove)
     sectionEl.removeEventListener('touchend', onLeave)
