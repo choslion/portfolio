@@ -96,7 +96,7 @@ const projects = [
     img: lisnThumbnail,
     color: '#f59e0b',
     introduce:
-      '약 2년간 운영 중인 자사 홈페이지 프로젝트입니다. 프로젝트 소개 페이지 구축, 신규 아티클 추가, BX 개선, GitHub Actions 기반 자동배포 흐름 구축을 담당했습니다.',
+      '약 2년간 운영 중인 리즌디자인 홈페이지 프로젝트입니다. 프로젝트 소개 페이지 구축, 신규 아티클 추가, BX 개선, GitHub Actions 기반 자동배포 흐름 구축을 담당했습니다.',
     contribution: '100%',
     mainFunc: 'SCSS 가이드 수립, 프로젝트 소개 페이지 30개 구축, 반응형 제작, BX 개선, 자동 배포 시스템 구축 (FTP → 사내 NAS)',
     url: 'https://www.thelisn.com',

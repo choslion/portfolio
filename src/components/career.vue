@@ -91,8 +91,8 @@
             </div>
 
             <div class="career-card">
-              <h3 class="career-card__title">자사 홈페이지 자동 배포 환경 구축</h3>
-              <p class="career-card__desc">자사 홈페이지 저장소 구조를 직접 재설계하고 자동 배포 파이프라인을 구축했습니다. <strong>feature·hotfix → develop</strong> 머지 시 테스트 서버 자동 배포, <strong>develop → main PR</strong>은 관리자 승인 후 운영 서버 배포되는 이중 파이프라인을 GitHub Actions + FTP 연동으로 직접 구축했습니다. Figma를 활용해 디자이너와 화면 구조 및 스타일을 협의하며 작업했습니다.</p>
+              <h3 class="career-card__title">리즌디자인 홈페이지 자동 배포 환경 구축</h3>
+              <p class="career-card__desc">리즌디자인 홈페이지 저장소 구조를 직접 재설계하고 자동 배포 파이프라인을 구축했습니다. <strong>feature·hotfix → develop</strong> 머지 시 테스트 서버 자동 배포, <strong>develop → main PR</strong>은 관리자 승인 후 운영 서버 배포되는 이중 파이프라인을 GitHub Actions + FTP 연동으로 직접 구축했습니다. Figma를 활용해 디자이너와 화면 구조 및 스타일을 협의하며 작업했습니다.</p>
               <div class="career-tags">
                 <span class="tag">GitHub Actions</span>
                 <span class="tag">Git Flow</span>
