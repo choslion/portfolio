@@ -32,11 +32,10 @@
               <h3 class="career-card__title">결제 서비스 화면 마이그레이션</h3>
               <p class="career-card__desc">앱카드결제·온라인결제 화면 약 60개(팝업 포함)를 <strong>모니모 앱 디자인 가이드 기준으로 마이그레이션</strong>하고, 일부 화면을 신규 구축했습니다. 결제 단계별 화면 구조·노출 조건과 개발계·운영계 반영 후 스타일 상태를 검증하고, 기획·개발·QA와 검수 의견을 조율했습니다.</p>
               <div class="career-tags">
-                <span class="tag">Vue</span>
                 <span class="tag">HTML</span>
-                <span class="tag">SCSS</span>
                 <span class="tag">CSS</span>
                 <span class="tag">JavaScript</span>
+                <span class="tag">SVN</span>
               </div>
             </div>
 
