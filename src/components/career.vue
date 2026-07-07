@@ -148,6 +148,13 @@ function countUp(index, target, delay = 0) {
 }
 
 onMounted(() => {
+  // 모션 감소 설정: 숫자 즉시 표시 + 핀/카드 애니메이션 생략
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    displayNums.value = stats.map((s) => s.num)
+    gsap.set('.career-card', { opacity: 1 })
+    return
+  }
+
   // 카운트업
   observer = new IntersectionObserver(
     (entries) => {

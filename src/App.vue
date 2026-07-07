@@ -27,10 +27,14 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-AOS.init({ once: true })
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-// 섹션 타이틀: 마스크 리빌 + 언더라인 확장
+AOS.init({ once: true, disable: reducedMotion })
+
+// 섹션 타이틀: 마스크 리빌 + 언더라인 확장 (모션 감소 설정 시 생략)
 onMounted(() => {
+  if (reducedMotion) return
+
   document.querySelectorAll('.section-title').forEach((st) => {
     const title = st.querySelector('.title')
     const line = st.querySelector('.underLine')
