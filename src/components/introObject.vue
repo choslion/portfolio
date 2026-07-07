@@ -31,8 +31,8 @@ const FLOOR_FRICTION = 0.9
 const ANG_FRICTION = 0.96
 const REST_THRESHOLD = 0.006
 const MAX_SPEED = 0.16
-const STRIKE_FACTOR = 0.1      // 마우스 타격 전달력
-const STRIKE_PAD = 0.15         // 박스 주변 타격 여유
+const STRIKE_FACTOR = 0.24     // 마우스 타격 전달력
+const STRIKE_PAD = 0.28         // 박스 주변 타격 여유
 
 const dpr = typeof window !== 'undefined' ? Math.min(window.devicePixelRatio || 1, 2) : 1
 
