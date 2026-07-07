@@ -11,6 +11,7 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
 import intro from './components/intro.vue'
 import navMenu from './components/nav.vue'
 import about from './components/about.vue'
@@ -21,8 +22,31 @@ import scrollUI from './components/scrollUI.vue'
 import '@/assets/css/index.scss'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 AOS.init({ once: true })
+
+// 섹션 타이틀: 마스크 리빌 + 언더라인 확장
+onMounted(() => {
+  document.querySelectorAll('.section-title').forEach((st) => {
+    const title = st.querySelector('.title')
+    const line = st.querySelector('.underLine')
+    if (!title) return
+
+    gsap.set(title, { clipPath: 'inset(0 0 100% 0)', yPercent: 35 })
+    if (line) gsap.set(line, { scaleX: 0 })
+
+    const tl = gsap.timeline({
+      defaults: { ease: 'power3.out' },
+      scrollTrigger: { trigger: st, start: 'top 85%', once: true },
+    })
+    tl.to(title, { clipPath: 'inset(0 0 0% 0)', yPercent: 0, duration: 0.7 })
+    if (line) tl.to(line, { scaleX: 1, duration: 0.5 }, '-=0.35')
+  })
+})
 </script>
 
 <style>
