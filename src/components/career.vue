@@ -199,6 +199,7 @@ onMounted(() => {
             y: 0,
             duration: 0.7,
             ease: 'power3.out',
+            clearProps: 'transform', // 완료 후 inline transform 제거 → CSS hover가 동작
             scrollTrigger: {
               trigger: card,
               start: 'top 85%',
