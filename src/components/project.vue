@@ -73,8 +73,8 @@ const projects = [
       '돈, 식비, 집, 공간 등 일상 속 판단이 필요한 순간을 위한 유틸리티 도구 모음입니다. 기획부터 UI 설계, 구현까지 단독으로 진행했습니다.',
     contribution: '100%',
     mainFunc: '예산 관리, 구독료 계산기, 배달vs요리 비교, 냉장고 재료 레시피, 방 가구 시뮬레이터 (Three.js 3D), 쓰레기 분류 안내',
-    url: 'https://choslion.github.io/check-income-calc/#/',
-    github: 'https://github.com/choslion/check-income-calc',
+    url: 'https://choslion.github.io/living-calculator/#/',
+    github: 'https://github.com/choslion/living-calculator',
     useSkills: 'React 19, TypeScript, Vite, React Router, Tailwind CSS 4, Three.js, React Three Fiber',
   },
   {
