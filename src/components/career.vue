@@ -91,15 +91,26 @@
             </div>
 
             <div class="career-card">
-              <h3 class="career-card__title">리즌디자인 홈페이지 자동 배포 환경 구축</h3>
-              <p class="career-card__desc">리즌디자인 홈페이지 저장소 구조를 직접 재설계하고 자동 배포 파이프라인을 구축했습니다. <strong>feature·hotfix → develop</strong> 머지 시 테스트 서버 자동 배포, <strong>develop → main PR</strong>은 관리자 승인 후 운영 서버 배포되는 이중 파이프라인을 GitHub Actions + FTP 연동으로 직접 구축했습니다. Figma를 활용해 디자이너와 화면 구조 및 스타일을 협의하며 작업했습니다.</p>
+              <h3 class="career-card__title">리즌디자인 홈페이지 BX 개편 및 반응형 화면 구축</h3>
+              <p class="career-card__desc">기존 프로젝트 소개 페이지의 BX 개편 시안을 반영하고 <strong>신규 소개 페이지 30개 이상</strong>을 구축했습니다. 2440·1560·900px 시안을 기준으로 데스크톱·태블릿·모바일 대응 반응형 레이아웃을 구현하고, 텍스트 컴포넌트·타이포그래피 체계·프로젝트별 포인트 컬러 등 디자인 가이드 규격을 적용했습니다. SCSS 구조와 스타일 작성 기준을 정리해 페이지별 스타일 관리의 일관성을 개선했으며, 해상도별 배경 이미지 결함과 시안 불일치 리소스를 발견해 디자이너와 수정하고 버전별 QA 리소스에 맞춰 변경 사항을 재반영했습니다.</p>
+              <div class="career-tags">
+                <span class="tag">Vue</span>
+                <span class="tag">SCSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">반응형</span>
+                <span class="tag">Figma</span>
+              </div>
+            </div>
+
+            <div class="career-card">
+              <h3 class="career-card__title">수동 FTP 배포를 GitHub Actions 자동 배포로 전환</h3>
+              <p class="career-card__desc">건당 <strong>10~15분 걸리던 수동 FTP 배포를 약 1분으로 단축</strong>하고, 수작업에 따른 파일 누락 가능성을 줄였습니다. develop 브랜치 반영 시 테스트 서버로, main 브랜치에 PR 병합 시 운영 서버로 배포되는 워크플로를 구성했습니다. FTP 접속 정보와 배포 설정은 GitHub Secrets로 관리해 소스 코드와 배포 정보의 관리 영역을 분리했고, 외부 검증 환경에서 사전 테스트한 후 내부 배포 환경에 적용했습니다.</p>
               <div class="career-tags">
                 <span class="tag">GitHub Actions</span>
-                <span class="tag">Git Flow</span>
+                <span class="tag">Git</span>
                 <span class="tag">FTP</span>
                 <span class="tag">NAS</span>
-                <span class="tag">CI/CD</span>
-                <span class="tag">Figma</span>
+                <span class="tag">GitHub Secrets</span>
               </div>
             </div>
           </div>
@@ -120,7 +131,7 @@ const stats = [
   { num: 500, suffix: '+', label: '운영·개선 이슈' },
   { num: 100, suffix: '+', label: '신규·개편 화면' },
   { num: 600, suffix: 'p', label: '접근성 검토' },
-  { num: 2,   suffix: '년+', label: '리즌디자인 홈페이지 운영' },
+  { num: 60,  suffix: '+', label: '결제 화면 마이그레이션' },
 ]
 
 const displayNums = ref(stats.map(() => 0))
