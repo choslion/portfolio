@@ -133,6 +133,29 @@
   width: 5.5rem;
 }
 
+.project-feature-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem 1.5rem;
+  flex: 1;
+
+  li {
+    position: relative;
+    padding-left: 0.8rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75em;
+      width: 0.25rem;
+      height: 0.25rem;
+      border-radius: 50%;
+      background-color: #1f8fa3;
+    }
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .project-info {
     flex-direction: column;
@@ -147,6 +170,10 @@
       width: 100%;
     }
   }
+}
+
+@media screen and (max-width: 768px) {
+  .project-feature-list { grid-template-columns: 1fr; }
 }
 
 @media screen and (max-width: 450px) {

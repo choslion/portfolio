@@ -38,7 +38,10 @@
                 <span><font-awesome-icon icon="fa-solid fa-check" aria-hidden="true" /></span>
                 <div class="project__main-func">주요기능</div>
               </div>
-              <div>{{ mainFunc }}</div>
+              <ul v-if="Array.isArray(mainFunc)" class="project-feature-list">
+                <li v-for="feature in mainFunc" :key="feature">{{ feature }}</li>
+              </ul>
+              <div v-else>{{ mainFunc }}</div>
             </li>
             <li v-if="url" class="project-contents__li">
               <div>
@@ -77,7 +80,10 @@ defineProps({
   color: String,
   introduce: String,
   contribution: String,
-  mainFunc: String,
+  mainFunc: {
+    type: [String, Array],
+    default: '',
+  },
   url: String,
   github: String,
   useSkills: String,

@@ -40,16 +40,22 @@ import ssDemo from '@/assets/video/ss-demo.mp4'
 const projects = [
   {
     title: 'Stock Pro',
-    date: '2025.07 ~ 업그레이드 중',
+    date: '2025.07 ~ 고도화 중',
     img: stockThumbnail,
     color: '#22c55e',
     introduce:
-      'React 기반으로 제작한 투자 지표 대시보드입니다. VIX, FGI, S&P 500 등 주요 지표를 시각화하고, Claude API를 활용해 AI 마켓 브리핑과 종목을 질문하면 답해주는 AI 주식 어시스턴트(챗봇)를 구현했습니다. 종목 시세는 일괄 요청과 SWR 캐시·사전 워밍을 적용해 로딩 지연 없이 응답하도록 최적화했습니다.',
+      '국내·미국 시장 데이터를 한곳에서 살펴보고, AI 브리핑과 질문 기능으로 초보자도 시장 흐름을 쉽게 이해할 수 있도록 만든 React·TypeScript 투자 대시보드입니다.',
+    note: '종목 시세 요청을 일괄화하고 SWR 캐시와 사전 워밍을 적용해 개발 환경의 캐시 미스 기준 응답 시간을 5~8배 단축했습니다.',
     contribution: '100% (프론트엔드 · FastAPI 백엔드)',
-    mainFunc: 'AI 주식 어시스턴트(챗봇), AI 마켓 브리핑 (Claude API), VIX 변동성 차트, 공포탐욕지수(FGI), S&P 500 대시보드, 한국 주식 검색·순위, ETF 카테고리, 상품·환율 추적, 섹터별 현황, 자체 설계 종합 심리 점수, 개인 관심종목(로컬 저장), 증시 뉴스 탭',
+    mainFunc: [
+      '국내·미국·테마별 시장 지표와 섹터 동향',
+      '종목 검색·가격 차트, 거래 순위와 ETF·원자재·환율 조회',
+      'Claude 기반 AI 시황 브리핑·종목 질문·차트 코멘트',
+      '브라우저에 저장하는 개인 관심종목과 증시 뉴스',
+    ],
     url: 'https://stock-pro-seven.vercel.app/',
     github: 'https://github.com/choslion/stock-pro',
-    useSkills: 'React 19, Vite, Tailwind CSS, Recharts, Lightweight-charts, Framer Motion, Zustand, Axios / FastAPI, Python, yfinance, Claude API, Render',
+    useSkills: 'React 19, TypeScript, TanStack Query, Zustand, Tailwind CSS, Framer Motion, Vitest / FastAPI, Python, Claude API',
   },
   {
     title: 'SS - 개인 AI 비서',
