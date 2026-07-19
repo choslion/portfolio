@@ -33,7 +33,7 @@
               </div>
               <div>{{ contribution }}</div>
             </li>
-            <li class="project-contents__li">
+            <li class="project-contents__li project-contents__li--features">
               <div>
                 <span><font-awesome-icon icon="fa-solid fa-check" aria-hidden="true" /></span>
                 <div class="project__main-func">주요기능</div>

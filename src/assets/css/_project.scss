@@ -135,8 +135,8 @@
 
 .project-feature-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.45rem 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 0.45rem;
   flex: 1;
 
   li {
@@ -173,7 +173,10 @@
 }
 
 @media screen and (max-width: 768px) {
-  .project-feature-list { grid-template-columns: 1fr; }
+  .project-contents__li--features {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
 }
 
 @media screen and (max-width: 450px) {
