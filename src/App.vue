@@ -1,12 +1,14 @@
 <template>
   <div>
-    <scrollUI />
-    <intro id="intro" />
     <navMenu />
-    <about id="about" />
-    <career id="career" />
-    <project id="project" />
-    <contact id="contact" />
+    <main>
+      <scrollUI />
+      <intro id="intro" />
+      <about id="about" />
+      <career id="career" />
+      <project id="project" />
+      <contact id="contact" />
+    </main>
   </div>
 </template>
 

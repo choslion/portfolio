@@ -6,7 +6,7 @@
       data-aos-duration="700"
       :data-aos-delay="delay"
     >
-      <div class="project-title">{{ title }}</div>
+      <h3 class="project-title">{{ title }}</h3>
       <div class="project-date">{{ date }}</div>
       <div class="project-info">
         <div v-if="img || video" class="project-info__imgs">
@@ -17,9 +17,9 @@
             loop
             muted
             playsinline
-            aria-label="프로젝트 데모 영상"
+            :aria-label="`${title} 프로젝트 데모 영상`"
           ></video>
-          <img v-else :src="img" alt="프로젝트 메인" />
+          <img v-else :src="img" :alt="`${title} 대표 화면`" />
         </div>
         <div class="project-info__contents">
           <div>{{ introduce }}</div>

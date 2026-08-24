@@ -84,7 +84,6 @@ const projects = [
     color: '#fb923c',
     introduce:
       '예산·퇴사 정산·식비 비교·가구 배치처럼 일상에서 반복되는 계산과 판단을 한곳에서 해결하도록 만든 React·TypeScript 생활 도구 모음입니다.',
-    note: '퇴사 정산·치수 문자열 파싱·방 배치·점수 로직을 UI와 분리하고, 4개 테스트 파일의 168개 테스트 케이스로 검증했습니다.',
     contribution: '100% (기획 · UI 설계 · 프론트엔드)',
     mainFunc: [
       '예산·구독·퇴사 정산 등 돈 관리 도구',
@@ -124,7 +123,7 @@ const projects = [
     color: '#f59e0b',
     introduce:
       '리즌디자인 자사 홈페이지의 BX 개편과 운영을 맡아 프로젝트 소개 화면 30개 이상과 반응형 UI를 구축하고, GitHub Actions 기반 배포 자동화를 구성했습니다.',
-    note: '건당 10~15분 걸리던 수동 FTP 배포를 GitHub Actions로 전환해 약 1분으로 단축하고 파일 누락을 없앴습니다.',
+    note: '건당 10~15분 걸리던 수동 FTP 배포를 GitHub Actions로 전환해 약 1분으로 단축하고 파일 누락 가능성을 줄였습니다.',
     contribution: '담당 업무 100%',
     mainFunc: [
       '프로젝트 소개 화면 30개 이상 구축과 BX 개편',
