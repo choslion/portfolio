@@ -29,7 +29,7 @@
             <li class="project-contents__li">
               <div>
                 <span><font-awesome-icon icon="fa-solid fa-check" aria-hidden="true" /></span>
-                <div class="project__main-func">기여도</div>
+                <div class="project__main-func">담당 범위</div>
               </div>
               <div>{{ contribution }}</div>
             </li>
