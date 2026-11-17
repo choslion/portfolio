@@ -1,13 +1,13 @@
 <template>
   <!-- Desktop: side rail dot nav (오른쪽 가장자리) -->
-  <nav class="nav-rail" aria-label="페이지 섹션 네비게이션">
+  <nav class="nav-rail" aria-label="페이지 섹션 내비게이션">
     <button
       v-for="item in items"
       :key="item.id"
       @click="goSection(item.id)"
       :class="['nav-rail__item', { 'nav-rail__item--active': active === item.id }]"
       :aria-label="item.label"
-      :aria-current="active === item.id ? 'true' : undefined"
+      :aria-current="active === item.id ? 'location' : undefined"
     >
       <span class="nav-rail__label">{{ item.label }}</span>
       <span class="nav-rail__dot" aria-hidden="true"></span>
@@ -72,6 +72,25 @@ const open = ref(false)
 const triggerRef = ref(null)
 const dialogRef = ref(null)
 let mainElement = null
+let scrollLocked = false
+let previousBodyOverflow = ''
+let previousHtmlOverflow = ''
+
+function lockPageScroll() {
+  if (scrollLocked) return
+  previousBodyOverflow = document.body.style.overflow
+  previousHtmlOverflow = document.documentElement.style.overflow
+  document.body.style.overflow = 'hidden'
+  document.documentElement.style.overflow = 'hidden'
+  scrollLocked = true
+}
+
+function unlockPageScroll() {
+  if (!scrollLocked) return
+  document.body.style.overflow = previousBodyOverflow
+  document.documentElement.style.overflow = previousHtmlOverflow
+  scrollLocked = false
+}
 
 function toggleMenu() {
   open.value = !open.value
@@ -142,6 +161,8 @@ onMounted(() => {
 
 watch(open, async (isOpen) => {
   if (mainElement) mainElement.inert = isOpen
+  if (isOpen) lockPageScroll()
+  else unlockPageScroll()
 
   await nextTick()
   if (isOpen) {
@@ -154,6 +175,7 @@ watch(open, async (isOpen) => {
 onUnmounted(() => {
   window.removeEventListener('scroll', updateActive)
   if (mainElement) mainElement.inert = false
+  unlockPageScroll()
 })
 </script>
 

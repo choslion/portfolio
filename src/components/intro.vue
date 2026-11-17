@@ -117,17 +117,19 @@ function tick() {
 }
 
 onMounted(() => {
-  cursorTimer = setInterval(() => { cursorVisible.value = !cursorVisible.value }, 530)
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const saveData = navigator.connection?.saveData === true
 
-  // 첫 페인트 이후 한가할 때 Three.js 박스 마운트
-  const mountObject = () => { showObject.value = true }
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(mountObject, { timeout: 2000 })
-  } else {
-    setTimeout(mountObject, 600)
+  // 모션 감소 또는 데이터 절약 설정에서는 무거운 Three.js 청크를 불러오지 않음
+  if (!reduced && !saveData) {
+    const mountObject = () => { showObject.value = true }
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(mountObject, { timeout: 2000 })
+    } else {
+      setTimeout(mountObject, 600)
+    }
   }
 
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches
   magneticAllowed = !reduced && fine
   const words = introTextRef.value?.querySelectorAll('.word') || []
@@ -136,9 +138,12 @@ onMounted(() => {
     gsap.set(words, { opacity: 1, y: 0 })
     if (subtitleRef.value) gsap.set(subtitleRef.value, { opacity: 1, y: 0 })
     if (ctaRef.value) gsap.set(ctaRef.value, { opacity: 1, y: 0 })
-    typeTimer = setTimeout(tick, 300)
+    displayed.value = phrases[0]
+    cursorVisible.value = false
     return
   }
+
+  cursorTimer = setInterval(() => { cursorVisible.value = !cursorVisible.value }, 530)
 
   const tl = gsap.timeline({
     defaults: { ease: 'power2.out' },

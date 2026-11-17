@@ -10,16 +10,37 @@
       <div class="project-date">{{ date }}</div>
       <div class="project-info">
         <div v-if="img || video" class="project-info__imgs">
-          <video
-            v-if="video"
-            :src="video"
-            autoplay
-            loop
-            muted
-            playsinline
-            :aria-label="`${title} 프로젝트 데모 영상`"
-          ></video>
-          <img v-else :src="img" :alt="`${title} 대표 화면`" />
+          <div v-if="video" class="project-video">
+            <video
+              ref="videoRef"
+              :src="video"
+              preload="none"
+              loop
+              muted
+              playsinline
+              :aria-label="`${title} 프로젝트 데모 영상`"
+              @play="isVideoPlaying = true"
+              @pause="isVideoPlaying = false"
+            ></video>
+            <button
+              type="button"
+              class="project-video__toggle"
+              :aria-label="`${title} 영상 ${isVideoPlaying ? '일시정지' : '재생'}`"
+              @click="toggleVideo"
+            >
+              <font-awesome-icon
+                :icon="isVideoPlaying ? 'fa-solid fa-pause' : 'fa-solid fa-play'"
+                aria-hidden="true"
+              />
+            </button>
+          </div>
+          <img
+            v-else
+            :src="img"
+            :alt="`${title} 대표 화면`"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <div class="project-info__contents">
           <div>{{ introduce }}</div>
@@ -72,7 +93,9 @@
 </template>
 
 <script setup>
-defineProps({
+import { onMounted, onUnmounted, ref } from 'vue'
+
+const props = defineProps({
   title: String,
   date: String,
   img: String,
@@ -89,6 +112,45 @@ defineProps({
   useSkills: String,
   note: String,
   delay: { type: Number, default: 0 },
+})
+
+const videoRef = ref(null)
+const isVideoPlaying = ref(false)
+let videoObserver = null
+
+async function playVideo() {
+  if (!videoRef.value) return
+  try {
+    await videoRef.value.play()
+  } catch {
+    isVideoPlaying.value = false
+  }
+}
+
+function toggleVideo() {
+  if (!videoRef.value) return
+  if (videoRef.value.paused) playVideo()
+  else videoRef.value.pause()
+}
+
+onMounted(() => {
+  if (!props.video || !videoRef.value) return
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  videoObserver = new IntersectionObserver(
+    ([entry]) => {
+      if (!videoRef.value) return
+      if (entry.isIntersecting && !reducedMotion) playVideo()
+      else videoRef.value.pause()
+    },
+    { rootMargin: '200px 0px', threshold: 0.2 },
+  )
+  videoObserver.observe(videoRef.value)
+})
+
+onUnmounted(() => {
+  videoObserver?.disconnect()
+  videoRef.value?.pause()
 })
 </script>
 

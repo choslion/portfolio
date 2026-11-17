@@ -51,6 +51,7 @@ onMounted(() => {
     })
     tl.to(title, { clipPath: 'inset(0 0 0% 0)', yPercent: 0, duration: 0.7 })
     if (line) tl.to(line, { scaleX: 1, duration: 0.5 }, '-=0.35')
+    tl.set(title, { clearProps: 'clipPath,transform' })
   })
 })
 </script>
