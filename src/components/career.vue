@@ -16,7 +16,7 @@
             <div class="career-header">
               <span class="career-company__name">리즌디자인</span>
               <span class="career-company__role">웹 퍼블리셔</span>
-              <span class="career-period">2023.03 ~ 현재 <em>재직 중</em></span>
+              <span class="career-period">2023.03 ~ 2026.09 <em>3년 7개월</em></span>
             </div>
             <div ref="statsRef" class="career-stats">
               <div v-for="(stat, i) in stats" :key="i" class="career-stat">

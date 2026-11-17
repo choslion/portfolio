@@ -122,7 +122,7 @@ const projects = [
   },
   {
     title: '리즌디자인 홈페이지',
-    date: '2024.10 ~ 현재 (운영 중)',
+    date: '2024.10 ~ 2026.09',
     img: lisnThumbnail,
     color: '#f59e0b',
     introduce:
