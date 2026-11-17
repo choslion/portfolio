@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="section-intro">
+    <section id="intro" class="section-intro">
       <intro-fx />
       <intro-object v-if="showObject" />
 

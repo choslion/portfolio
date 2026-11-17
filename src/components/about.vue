@@ -1,9 +1,9 @@
 <template>
   <div>
-    <section class="section-about">
+    <section id="about" class="section-about">
       <div class="section-wrap">
         <div class="section-title">
-          <h2 id="about" class="title">About</h2>
+          <h2 class="title">About</h2>
           <div class="underLine"></div>
         </div>
 

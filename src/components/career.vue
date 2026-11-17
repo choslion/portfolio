@@ -1,9 +1,9 @@
 ﻿<template>
   <div>
-    <section class="section-career">
+    <section id="career" class="section-career">
       <div class="section-wrap">
         <div class="section-title">
-          <h2 id="career" class="title">Career</h2>
+          <h2 class="title">Career</h2>
           <div class="underLine"></div>
         </div>
 

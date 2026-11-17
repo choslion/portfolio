@@ -53,7 +53,7 @@
             <li v-if="github" class="project-contents__li">
               <div>
                 <span><font-awesome-icon icon="fa-solid fa-check" aria-hidden="true" /></span>
-                <div class="project__main-func">Github</div>
+                <div class="project__main-func">GitHub</div>
               </div>
               <div><a :href="github" target="_blank" rel="noopener noreferrer">{{ github }}</a></div>
             </li>

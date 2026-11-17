@@ -1,12 +1,12 @@
 <template>
-  <div class="section-contact">
+  <section id="contact" class="section-contact">
     <div class="section-wrap">
       <div class="section-title">
-        <h2 id="contact" class="title">Contact</h2>
+        <h2 class="title">Contact</h2>
         <div class="underLine"></div>
       </div>
       <div class="contact-box flex-set font24">
-        <span class="logo"><img src="@/assets/img/logo-white.png" alt="로고" /></span>
+        <span class="logo"><img src="@/assets/img/logo-white.png" alt="조승혁 포트폴리오 로고" /></span>
         <p class="contact-email">
           Email :
           <button
@@ -36,7 +36,7 @@
         {{ toastMessage }}
       </div>
     </Transition>
-  </div>
+  </section>
 </template>
 
 <script setup>

@@ -3,11 +3,11 @@
     <navMenu />
     <main>
       <scrollUI />
-      <intro id="intro" />
-      <about id="about" />
-      <career id="career" />
-      <project id="project" />
-      <contact id="contact" />
+      <intro />
+      <about />
+      <career />
+      <project />
+      <contact />
     </main>
   </div>
 </template>
